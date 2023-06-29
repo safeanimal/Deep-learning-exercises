@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f4b3f04-c9c1-414b-a769-e665b6e7bf13" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../2014-SRCNN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/.idea/DCGAN.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/.idea/workspace-WIN-9RI3PV9PDQ6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2015-DCGAN/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-EDSR" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/.idea/SRGAN.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/datasets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-SRGAN/srgan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/.idea/2017-WassersteinGAN-GP-SimpleVersion.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/debug-cli.Administrator.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201138-xxefw12g/run-xxefw12g.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_201819-iyprlord/run-iyprlord.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204153-ux5z6yml/run-ux5z6yml.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_204325-dgszc6e5/run-dgszc6e5.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230408_205332-n6l3e4ni/run-n6l3e4ni.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_143222-5gr7hy8s/run-5gr7hy8s.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_152152-wd7kztt1/run-wd7kztt1.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_153114-ixlxtg9s/run-ixlxtg9s.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_154104-7437srhe/run-7437srhe.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_155634-tunzsmc7/run-tunzsmc7.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_162230-ksjfoknu/run-ksjfoknu.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_163527-gj5a6g1t/run-gj5a6g1t.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164333-aohhrohr/run-aohhrohr.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_164532-g7roio2u/run-g7roio2u.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165030-x5rozhbo/run-x5rozhbo.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_165804-1dcf9iyl/run-1dcf9iyl.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230409_170459-zdt7df3s/run-zdt7df3s.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_142458-n6gaitmd/run-n6gaitmd.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_144456-egdxubwk/run-egdxubwk.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_145105-0q9qkdlb/run-0q9qkdlb.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_150816-yub94rgj/run-yub94rgj.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_152603-ktd3dh70/run-ktd3dh70.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_155416-vr3e5h6g/run-vr3e5h6g.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_172051-qx2aeksl/run-qx2aeksl.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_195410-541az8iu/run-541az8iu.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230412_201029-yvn4zve3/run-yvn4zve3.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2017-WassersteinGAN-GP-SimpleVersion/wandb/run-20230511_171306-ds5ovm9a/run-ds5ovm9a.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2018-ESRGAN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2019-SinGAN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021-SwinIR" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2022-swin2sr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/.idea/Basic-ContentLoss.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/metric.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/save/best.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-ContentLoss/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/.idea/Test1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/.idea/workspace-DESKTOP-9PV2Q9Q.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/best.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/4x 239_2000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/best.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_0.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_1.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_10.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_11.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_12.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_13.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_14.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_15.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_16.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_17.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_18.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_19.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_2.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_20.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_21.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_22.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_23.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_24.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_25.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_26.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_27.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_28.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_29.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_3.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_30.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_31.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_32.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_33.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_34.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_35.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_36.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_37.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_38.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_39.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_4.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_40.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_41.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_42.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_43.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_44.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_45.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_46.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_47.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_48.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_49.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_5.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_6.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_7.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_8.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/outputs/epoch_9.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Convolutional SR/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/.idea/GAN Basic.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/.idea/workspace-WIN-9RI3PV9PDQ6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/final.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/debug-cli.Administrator.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_172545-417ofq2g/run-417ofq2g.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_173235-2xgxwfjb/run-2xgxwfjb.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_174204-r98p7z3d/run-r98p7z3d.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182345-lu1e3ihp/run-lu1e3ihp.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-GAN/wandb/run-20230408_182959-x0xn6kog/run-x0xn6kog.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/.idea/Basic-Patches.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Patches/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/.idea/Test2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/W&amp;B.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/outputs/best.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 0_2000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10000_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10001_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10002_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10003_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10004_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10005_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10006_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10007_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 10008_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 0_2000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10000_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10001_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10002_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10003_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10004_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10005_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10006_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10007_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/test_outputs/x4 bicubic 10008_2004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/debug-cli.Administrator.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_211046-lwzxmh58/run-lwzxmh58.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_215551-zga9c8x8/run-zga9c8x8.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Basic-Transposed Convolution + Subpixel Layser SR/wandb/run-20230401_220435-a20p9h2f/run-a20p9h2f.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Basic-tools.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metric.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.idea/PyTorch-VAE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/BetaTCVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/BetaVAE_B_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/BetaVAE_B_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/BetaVAE_H_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/CategoricalVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/ConditionalVAE_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/DFCVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/DIPVAE_83.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/IWAE_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/InfoVAE_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/InfoVAE_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/JointVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/LogCoshVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/MIWAE_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/MSSIMVAE_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/SWAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/Vanilla VAE_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/WAE_IMQ_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/WAE_RBF_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_BetaTCVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_BetaVAE_B_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_BetaVAE_B_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_BetaVAE_H_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_CategoricalVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_ConditionalVAE_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_DFCVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_DIPVAE_83.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_IWAE_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_InfoVAE_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_JointVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_LogCoshVAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_MIWAE_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_MSSIMVAE_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_SWAE_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_VQVAE_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_Vanilla VAE_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_WAE_IMQ_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/assets/recons_WAE_RBF_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/bbvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/betatc_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/bhvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/cat_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/cvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/dfc_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/dip_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/factorvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/gammavae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/hvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/infovae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/iwae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/joint_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/logcosh_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/lvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/miwae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/mssim_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/swae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/vampvae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/vq_vae.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/wae_mmd_imq.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/configs/wae_mmd_rbf.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/experiment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/beta_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/betatc_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/cat_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/cvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/dfcvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/dip_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/fvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/gamma_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/hvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/info_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/iwae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/joint_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/logcosh_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/lvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/miwae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/mssim_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/swae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/twostage_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/types_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/vampvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/vanilla_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/vq_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/models/wae_mmd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/bvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_betatcvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_cat_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_dfc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_dipvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_fvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_gvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_hvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_iwae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_joint_Vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_logcosh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_lvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_miwae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_mssimvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_swae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_vq_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/test_wae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/text_cvae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/tests/text_vamp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VAE/utils.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QBzruzY9YG4wNk9VcUAdZkKLxb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/AI/Deep-learning-exercises/exercises/Basic-RNN&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f4b3f04-c9c1-414b-a769-e665b6e7bf13" name="Changes" comment="" />
+      <created>1684841964241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684841964241</updated>
+      <workItem from="1684841965341" duration="4547000" />
+      <workItem from="1684985473176" duration="18476000" />
+      <workItem from="1685188530225" duration="50000" />
+      <workItem from="1688006446004" duration="637000" />
+      <workItem from="1688016916250" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,5 +1,7 @@
 import argparse
-from torch.utils.data import DataLoader, Subset, random_split
+import math
+
+from torch.utils.data import DataLoader, random_split
 from dataset import ImageDataset
 import utils
 from tqdm import tqdm
@@ -10,16 +12,14 @@ import copy
 import os
 import torch
 from torch.backends import cudnn
+from torch import Tensor
 
 
 def set_parameters():
     parser = argparse.ArgumentParser(description='Super resolution')
     parser.add_argument('img_folder', nargs='?', type=str,
-                        default='D:/Materials/dataset/anime-face-256by256/animefaces256cleaner')
-    parser.add_argument('img_size', nargs='?', type=int, default=256)
-    parser.add_argument('patch_size', nargs='?', type=int, default=64)
-    parser.add_argument('upsampling_scale', nargs='?', choices=[2, 4, 8], default=4)
-    parser.add_argument('samples_size', nargs='?', type=int, default=20000)
+                        default='D:/Materials/dataset/train/Anime face/images')
+    parser.add_argument('img_size', nargs='?', type=int, default=64)
     parser.add_argument('ratio', nargs='?', type=float, default=0.8, help='the ratio of samples used for training')
     parser.add_argument('batch_size', nargs='?', type=int, default=16)
     parser.add_argument('num_workers', nargs='?', type=int, default=6)
@@ -41,42 +41,46 @@ def init_wandb(project_name: str, args):
     )
 
 
-def get_inputs():
-    return None
+# 将图片(batch_size, 3, img_size, img_size)转为像素序列(batch_size, img_size * img_size, 3)，每个像素是一个rgb三维的元素
+def transform_to_pixel_seq(imgs: Tensor):
+    imgs = imgs.permute(0, 2, 3, 1)  # (batch_size, img_size, img_size, 3)
+    pixel_seq = imgs.reshape(imgs.shape[0], -1, 3)  # (batch_size, img_size * img_size, 3)
+
+    return pixel_seq
 
 
-def get_targets():
-    return None
+# 将像素序列(batch_size, img_size * img_size, 3)转为图片(batch_size, 3, img_size, img_size)
+def transform_to_imgs(pixel_seq):
+    batch_size = pixel_seq.shape[0]
+    img_size = int(math.sqrt(pixel_seq.shape[1]))
 
+    imgs = pixel_seq.reshape(batch_size, img_size, img_size, 3)
+    imgs = imgs.permute(0, 3, 1, 2)
 
-def compute_metric():
-    return None
-
-
-def compute_loss(outputs, targets):
-    return None
+    return imgs
 
 
 if __name__ == '__main__':
     parser = set_parameters()
     args = parser.parse_args()  # 可以通过args.x访问x参数
-    full_dataset = ImageDataset(img_size=args.img_size, upsampling_scale=args.upsampling_scale,
-                                img_folder=args.img_folder, samples_size=args.samples_size)
+    full_dataset = ImageDataset(img_size=args.img_size, img_folder=args.img_folder, min_size=args.img_size)
 
+    samples_size = len(full_dataset)
     # 将数据集按照args.ratio分割为training和dev两部分
-    training_samples_size = int(args.ratio * args.samples_size)
-    dev_samples_size = args.samples_size - training_samples_size
+    training_samples_size = int(args.ratio * samples_size)
+    dev_samples_size = samples_size - training_samples_size
     training_dataset, dev_dataset = random_split(full_dataset, [training_samples_size, dev_samples_size])
 
     # 生成dataloader
-    training_dataloader = DataLoader(training_dataset, batch_size=args.batch_size, num_workers=args.num_workers)
-    dev_dataloader = DataLoader(dev_dataset, batch_size=args.batch_size, num_workers=args.num_workers)
+    training_dataloader = DataLoader(training_dataset, batch_size=args.batch_size,
+                                     num_workers=args.num_workers, drop_last=True)
+    dev_dataloader = DataLoader(dev_dataset, batch_size=args.batch_size, num_workers=args.num_workers, drop_last=True)
 
     # 展示dataloader里的数据（图片）
     for batch in training_dataloader:
-        lr_images, hr_images = batch
-        utils.show_images_tensor(4, lr_images)
-        utils.show_images_tensor(4, hr_images)
+        input_images, target_images = batch
+        utils.show_images_tensor(4, input_images)
+        utils.show_images_tensor(4, target_images)
         break
 
     # 选择GPU为device
@@ -89,8 +93,10 @@ if __name__ == '__main__':
     cudnn.benchmark = True
 
     # 设置criterion
+    criterion = torch.nn.MSELoss()
 
     # 设置optimizer
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
     # 下面变量用于记录最好的指标和epoch
     best_epoch = 0
@@ -102,7 +108,6 @@ if __name__ == '__main__':
         model.train()
 
         # 设置本轮的logger
-        metric_logger = AverageLogger()
         loss_logger = AverageLogger()
 
         # 设置进度条
@@ -111,30 +116,21 @@ if __name__ == '__main__':
             p_bar.set_description(f'Epoch: {epoch + 1}')
             # 分批次训练
             for batch in dev_dataloader:
-                lr_images, hr_images = batch
-                lr_images = lr_images.to(device)
-                hr_images = hr_images.to(device)
-
-                # 清空模型梯度
-                model.zero_grad()
+                input_images, target_images = batch
+                input_images = input_images.to(device)
+                target_images = target_images.to(device)
 
                 # 得到输入数据
-                inputs = get_inputs()
+                inputs = transform_to_pixel_seq(input_images)
 
                 # 得到目标数据
-                targets = get_targets()
+                targets = transform_to_pixel_seq(target_images)
 
                 # 前向传播，得到模型输出
-                outputs = model(inputs)
-
-                # 计算指标
-                metric = compute_metric()
-
-                # 记录指标
-                metric_logger.update(metric.item())
+                outputs = model(inputs)  # 注意RNN返回两个参数，第一个是outputs，第二个是最后一个cell的hidden states
 
                 # 计算损失
-                loss = compute_loss(outputs, targets)
+                loss = criterion(outputs, targets)
 
                 # 记录损失
                 loss_logger.update(loss.item())
@@ -143,52 +139,46 @@ if __name__ == '__main__':
                 loss.backward()
 
                 # 更新模型参数
-                model.step()
+                optimizer.step()
+
+                # 清空模型梯度
+                optimizer.zero_grad()
 
                 # 更新进度条&显示损失及指标
                 p_bar.update(args.batch_size)
-                p_bar.set_postfix({'loss': loss_logger.avg, 'metric': metric_logger.avg})
+                p_bar.set_postfix({'loss': loss_logger.avg})
 
         # 开启评估模式
         model.eval()
-        # 清空相应logger
-        metric_logger.clear()
+
         # 设置进度条
         with tqdm(total=dev_samples_size, ncols=100) as p_bar:
             # 设置进度条描述
             p_bar.set_description(f'Val: {epoch + 1}')
             # 分批次
-            for batch in training_dataloader:
-                lr_images, hr_images = batch
-                lr_images = lr_images.to(device)
-                hr_images = hr_images.to(device)
+            for batch in dev_dataloader:
+                input_images, target_images = batch
+                input_images = input_images.to(device)
+                target_images = target_images.to(device)
 
                 # 取消梯度的计算
                 with torch.no_grad():
                     # 得到输入数据
-                    inputs = get_inputs()
+                    inputs = transform_to_pixel_seq(input_images)
 
                     # 得到目标数据
-                    targets = get_targets()
+                    targets = transform_to_pixel_seq(target_images)
 
                     # 前向传播，得到模型输出
                     outputs = model(inputs)
 
-                    # 计算指标
-                    metric = compute_metric()
-
-                    # 记录指标
-                    metric_logger.update(metric.item())
+                    output_imgs = transform_to_imgs(outputs)
+                    utils.show_images_tensor(4, output_imgs.cpu())
 
                 # 更新进度条&显示指标
                 p_bar.update(args.batch_size)
-                p_bar.set_postfix({'metric': metric_logger.avg})
 
-            # if current epoch has the best metric, update it
-            if metric_logger.avg > best_metric:
-                best_metric = metric_logger.avg
-                best_epoch = epoch + 1
-                best_weights = copy.deepcopy(model.state_dict())
-                torch.save(best_weights, os.path.join(args.save_path, 'best.pth'))
+    last_weights = copy.deepcopy(model.state_dict())
+    torch.save(last_weights, os.path.join(args.save_path, 'last.pth'))
 
-    print(f'Complete! \n The best epoch is {best_epoch} \n The best metric is {best_metric}')
+    print(f'Complete!')
