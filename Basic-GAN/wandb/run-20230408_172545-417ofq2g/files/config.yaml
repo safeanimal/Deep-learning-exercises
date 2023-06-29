@@ -1,0 +1,56 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.14.0
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.13
+    start_time: 1680945945.126919
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 16
+      - 23
+      4: 3.9.13
+      5: 0.14.0
+      8:
+      - 3
+      - 5
+architecture:
+  desc: null
+  value: DCGAN
+betas_D:
+  desc: null
+  value:
+  - 0.5
+  - 0.999
+betas_G:
+  desc: null
+  value:
+  - 0.5
+  - 0.999
+dataset:
+  desc: null
+  value: another anime face dataset
+epochs:
+  desc: null
+  value: 10
+learning_rate:
+  desc: null
+  value: 0.0001
+optimizer_D:
+  desc: null
+  value: torch.optim.adam.Adam
+optimizer_G:
+  desc: null
+  value: torch.optim.adam.Adam

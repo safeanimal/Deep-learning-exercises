@@ -1,0 +1,32 @@
+2023-04-01 22:04:35,282 INFO    MainThread:7444 [wandb_setup.py:_flush():76] Configure stats pid to 7444
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Administrator\.config\wandb\settings
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\Transposed Convolution + Subpixel Layser SR Basic\wandb\settings
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program': 'C:\\Users\\Administrator\\OneDrive\\Documents\\Deep learning\\Super Resolution\\Models\\Transposed Convolution + Subpixel Layser SR Basic\\train.py'}
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_init.py:_log_setup():506] Logging user logs to C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\Transposed Convolution + Subpixel Layser SR Basic\wandb\run-20230401_220435-a20p9h2f\logs\debug.log
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_init.py:_log_setup():507] Logging internal logs to C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\Transposed Convolution + Subpixel Layser SR Basic\wandb\run-20230401_220435-a20p9h2f\logs\debug-internal.log
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_init.py:init():546] calling init triggers
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_init.py:init():552] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.02, 'architecture': 'SRG2(\n  (layers): Sequential(\n    (conv_1): Conv2d(3, 16, kernel_size=(13, 13), stride=(1, 1), padding=(6, 6))\n    (leaky_relu1): LeakyReLU(negative_slope=0.01, inplace=True)\n    (conv_2): Conv2d(16, 32, kernel_size=(9, 9), stride=(1, 1), padding=(4, 4))\n    (leaky_relu2): LeakyReLU(negative_slope=0.01, inplace=True)\n    (conv_3): Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (leaky_relu3): LeakyReLU(negative_slope=0.01, inplace=True)\n    (conv_4): Conv2d(16, 12, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (leaky_relu4): LeakyReLU(negative_slope=0.01, inplace=True)\n    (conv_transposed1): ConvTranspose2d(12, 8, kernel_size=(6, 6), stride=(2, 2), padding=(2, 2), bias=False)\n    (leaky_relu5): LeakyReLU(negative_slope=0.01, inplace=True)\n    (conv_transposed2): ConvTranspose2d(8, 3, kernel_size=(6, 6), stride=(2, 2), padding=(2, 2), bias=False)\n  )\n)', 'dataset': 'another anime face dataset', 'epochs': 10, 'criterion': 'MSELoss', 'optimization': 'Adam'}
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_init.py:init():602] starting backend
+2023-04-01 22:04:35,283 INFO    MainThread:7444 [wandb_init.py:init():606] setting up manager
+2023-04-01 22:04:35,285 INFO    MainThread:7444 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-04-01 22:04:35,288 INFO    MainThread:7444 [wandb_init.py:init():613] backend started and connected
+2023-04-01 22:04:35,289 INFO    MainThread:7444 [wandb_init.py:init():701] updated telemetry
+2023-04-01 22:04:35,293 INFO    MainThread:7444 [wandb_init.py:init():741] communicating run to backend with 60.0 second timeout
+2023-04-01 22:04:37,673 INFO    MainThread:7444 [wandb_run.py:_on_init():2133] communicating current version
+2023-04-01 22:04:38,610 INFO    MainThread:7444 [wandb_run.py:_on_init():2142] got version response 
+2023-04-01 22:04:38,610 INFO    MainThread:7444 [wandb_init.py:init():789] starting run threads in backend
+2023-04-01 22:04:47,812 INFO    MainThread:7444 [wandb_run.py:_console_start():2114] atexit reg
+2023-04-01 22:04:47,812 INFO    MainThread:7444 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-04-01 22:04:47,812 INFO    MainThread:7444 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-04-01 22:04:47,813 INFO    MainThread:7444 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-04-01 22:04:47,813 INFO    MainThread:7444 [wandb_init.py:init():831] run started, returning control to user process
+2023-04-01 22:08:02,597 INFO    MainThread:7444 [wandb_run.py:_finish():1854] finishing run imagegroup/Transposed Convolution SR Basic/a20p9h2f
+2023-04-01 22:08:02,597 INFO    MainThread:7444 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-04-01 22:08:02,597 INFO    MainThread:7444 [wandb_run.py:_restore():2066] restore
+2023-04-01 22:08:02,597 INFO    MainThread:7444 [wandb_run.py:_restore():2072] restore done
+2023-04-01 22:08:14,720 INFO    MainThread:7444 [wandb_run.py:_footer_history_summary_info():3422] rendering history
+2023-04-01 22:08:14,720 INFO    MainThread:7444 [wandb_run.py:_footer_history_summary_info():3454] rendering summary
+2023-04-01 22:08:14,725 INFO    MainThread:7444 [wandb_run.py:_footer_sync_info():3380] logging synced files

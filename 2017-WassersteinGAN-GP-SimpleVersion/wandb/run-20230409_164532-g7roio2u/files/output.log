@@ -1,0 +1,102 @@
+
+
+
+
+
+
+
+Epoch: 1: 100%|██████████████████████████████████████████████| 10000/10000 [00:23<00:00, 423.08it/s]
+
+
+
+
+
+
+Epoch: 2: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 466.07it/s]
+
+
+
+
+
+
+Epoch: 3: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 463.58it/s]
+
+
+
+
+
+
+Epoch: 4: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 461.21it/s]
+
+
+
+
+
+
+
+Epoch: 5: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 461.99it/s]
+
+
+
+
+
+
+Epoch: 6: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 471.99it/s]
+
+
+
+
+
+
+Epoch: 7: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 461.85it/s]
+
+
+
+
+
+
+Epoch: 8: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 462.93it/s]
+
+
+
+
+
+
+
+Epoch: 9: 100%|██████████████████████████████████████████████| 10000/10000 [00:21<00:00, 473.36it/s]
+
+
+
+
+
+
+Epoch: 10: 100%|█████████████████████████████████████████████| 10000/10000 [00:21<00:00, 467.76it/s]
+
+
+
+
+
+
+Epoch: 11: 100%|█████████████████████████████████████████████| 10000/10000 [00:20<00:00, 476.78it/s]
+
+
+
+Epoch: 12:  41%|██████████████████▊                           | 4096/10000 [00:14<00:20, 286.94it/s]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-GP-SimpleVersion\main.py", line 105, in <module>
+    mix_scores = D(mix_imgs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-GP-SimpleVersion\models.py", line 85, in forward
+    predicts = self.layers(img)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\container.py", line 204, in forward
+    input = module(input)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt

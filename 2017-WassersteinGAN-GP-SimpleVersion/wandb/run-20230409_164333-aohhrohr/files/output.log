@@ -1,0 +1,18 @@
+
+Epoch: 1:   0%|                                                           | 0/10000 [00:11<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-GP-SimpleVersion\main.py", line 96, in <module>
+    fake_imgs = G(noise_samples).to(device)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-GP-SimpleVersion\models.py", line 51, in forward
+    return self.layers(z)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\container.py", line 204, in forward
+    input = module(input)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 956, in forward
+    return F.conv_transpose2d(
+RuntimeError: Given transposed=1, weight of size [128, 64, 4, 4], expected input[64, 64, 16, 16] to have 128 channels, but got 64 channels instead

@@ -1,0 +1,90 @@
+wandb_version: 1
+
+architecture:
+  desc: null
+  value: WGAN
+dataset:
+  desc: null
+  value: another anime face dataset
+samples_num:
+  desc: null
+  value: 92219
+learning_rate:
+  desc: null
+  value: 0.0001
+Generator:
+  desc: null
+  value: "Generator(\n  (layers): Sequential(\n    (0): ConvTranspose2d(100, 768,\
+    \ kernel_size=(4, 4), stride=(1, 1), bias=False)\n    (1): BatchNorm2d(768, eps=1e-05,\
+    \ momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU(inplace=True)\n\
+    \    (3): ConvTranspose2d(768, 192, kernel_size=(4, 4), stride=(2, 2), padding=(1,\
+    \ 1), bias=False)\n    (4): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True,\
+    \ track_running_stats=True)\n    (5): ReLU(inplace=True)\n    (6): ConvTranspose2d(192,\
+    \ 48, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)\n    (7):\
+    \ BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n\
+    \    (8): ReLU(inplace=True)\n    (9): ConvTranspose2d(48, 12, kernel_size=(4,\
+    \ 4), stride=(2, 2), padding=(1, 1), bias=False)\n    (10): BatchNorm2d(12, eps=1e-05,\
+    \ momentum=0.1, affine=True, track_running_stats=True)\n    (11): ReLU(inplace=True)\n\
+    \    (12): PixelShuffle(upscale_factor=2)\n    (13): Tanh()\n  )\n)"
+Discriminator:
+  desc: null
+  value: "Discriminator(\n  (layers): Sequential(\n    (0): Conv2d(3, 64, kernel_size=(4,\
+    \ 4), stride=(2, 2), padding=(1, 1), bias=False)\n    (1): LeakyReLU(negative_slope=0.2,\
+    \ inplace=True)\n    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1,\
+    \ 1), bias=False)\n    (3): LeakyReLU(negative_slope=0.2, inplace=True)\n    (4):\
+    \ Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)\n\
+    \    (5): LeakyReLU(negative_slope=0.2, inplace=True)\n    (6): Conv2d(256, 512,\
+    \ kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)\n    (7): LeakyReLU(negative_slope=0.2,\
+    \ inplace=True)\n    (8): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)\n\
+    \  )\n)"
+epochs:
+  desc: null
+  value: 15
+dis_train_num:
+  desc: null
+  value: 4
+batch_size:
+  desc: null
+  value: 64
+optimizer_G:
+  desc: null
+  value: torch.optim.adam.Adam
+betas_G:
+  desc: null
+  value:
+  - 0.5
+  - 0.999
+optimizer_D:
+  desc: null
+  value: torch.optim.adam.Adam
+betas_D:
+  desc: null
+  value:
+  - 0.5
+  - 0.999
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.13
+    cli_version: 0.14.2
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1681286056.350323
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 16
+      - 23
+      4: 3.9.13
+      5: 0.14.2
+      8:
+      - 3
+      - 5

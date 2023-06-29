@@ -1,0 +1,44 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.13",
+    "heartbeatAt": "2023-04-08T09:42:06.445341",
+    "startedAt": "2023-04-08T09:42:04.896525",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\Administrator\\OneDrive\\Documents\\Deep learning\\Super Resolution\\Models\\GAN Basic\\train.py",
+    "codePath": "train.py",
+    "host": "WIN-9RI3PV9PDQ6",
+    "username": "Administrator",
+    "executable": "D:\\Anaconda\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2500.0,
+        "min": 0.0,
+        "max": 2500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2500.0,
+            "min": 0.0,
+            "max": 2500.0
+        }
+    ],
+    "disk": {
+        "total": 150.00097274780273,
+        "used": 115.72777557373047
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3060 Ti",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.8621826171875
+    }
+}

@@ -1,0 +1,186 @@
+2023-04-08 20:41:53,706 INFO    StreamThr :15860 [internal.py:wandb_internal():86] W&B internal server running at pid: 15860, started at: 2023-04-08 20:41:53.705158
+2023-04-08 20:41:53,707 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: status
+2023-04-08 20:41:53,707 INFO    WriterThread:15860 [datastore.py:open_for_write():85] open: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\run-ux5z6yml.wandb
+2023-04-08 20:41:53,711 DEBUG   SenderThread:15860 [sender.py:send():375] send: header
+2023-04-08 20:41:53,711 DEBUG   SenderThread:15860 [sender.py:send():375] send: run
+2023-04-08 20:41:54,558 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: check_version
+2023-04-08 20:41:54,563 INFO    SenderThread:15860 [dir_watcher.py:__init__():219] watching files in: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files
+2023-04-08 20:41:54,563 INFO    SenderThread:15860 [sender.py:_start_run_threads():1124] run started: ux5z6yml with start time 1680957713.706157
+2023-04-08 20:41:54,563 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: summary_record
+2023-04-08 20:41:54,564 INFO    SenderThread:15860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-08 20:41:54,564 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: check_version
+2023-04-08 20:41:55,339 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: run_start
+2023-04-08 20:41:55,360 DEBUG   HandlerThread:15860 [system_info.py:__init__():31] System info init
+2023-04-08 20:41:55,360 DEBUG   HandlerThread:15860 [system_info.py:__init__():46] System info init done
+2023-04-08 20:41:55,360 INFO    HandlerThread:15860 [system_monitor.py:start():181] Starting system monitor
+2023-04-08 20:41:55,360 INFO    SystemMonitor:15860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-08 20:41:55,361 INFO    HandlerThread:15860 [system_monitor.py:probe():201] Collecting system info
+2023-04-08 20:41:55,363 INFO    SystemMonitor:15860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-08 20:41:55,364 INFO    SystemMonitor:15860 [interfaces.py:start():190] Started disk monitoring
+2023-04-08 20:41:55,364 INFO    SystemMonitor:15860 [interfaces.py:start():190] Started gpu monitoring
+2023-04-08 20:41:55,364 INFO    SystemMonitor:15860 [interfaces.py:start():190] Started memory monitoring
+2023-04-08 20:41:55,374 INFO    SystemMonitor:15860 [interfaces.py:start():190] Started network monitoring
+2023-04-08 20:41:55,386 DEBUG   HandlerThread:15860 [system_info.py:probe():195] Probing system
+2023-04-08 20:41:55,388 DEBUG   HandlerThread:15860 [git.py:repo():40] git repository is invalid
+2023-04-08 20:41:55,388 DEBUG   HandlerThread:15860 [system_info.py:probe():240] Probing system done
+2023-04-08 20:41:55,388 DEBUG   HandlerThread:15860 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.9.13', 'heartbeatAt': '2023-04-08T12:41:55.386124', 'startedAt': '2023-04-08T12:41:53.692845', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\Administrator\\OneDrive\\Documents\\Deep learning\\Super Resolution\\Models\\2017-WassersteinGAN-SimpleVersion\\main.py', 'codePath': 'main.py', 'host': 'WIN-9RI3PV9PDQ6', 'username': 'Administrator', 'executable': 'D:\\Anaconda\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2500.0, 'min': 0.0, 'max': 2500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 0.0, 'max': 2500.0}], 'disk': {'total': 150.00097274780273, 'used': 117.2892951965332}, 'gpu': 'NVIDIA GeForce RTX 3060 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Ti', 'memory_total': 8589934592}], 'memory': {'total': 15.8621826171875}}
+2023-04-08 20:41:55,388 INFO    HandlerThread:15860 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-08 20:41:55,388 INFO    HandlerThread:15860 [system_monitor.py:probe():214] Publishing system info
+2023-04-08 20:41:55,388 DEBUG   HandlerThread:15860 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-08 20:41:55,389 DEBUG   HandlerThread:15860 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-08 20:41:55,389 DEBUG   HandlerThread:15860 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-04-08 20:41:55,574 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\conda-environment.yaml
+2023-04-08 20:41:55,574 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\wandb-summary.json
+2023-04-08 20:41:55,574 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\requirements.txt
+2023-04-08 20:42:04,189 DEBUG   HandlerThread:15860 [system_info.py:_save_conda():86] Saving conda packages done
+2023-04-08 20:42:04,190 INFO    HandlerThread:15860 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-08 20:42:04,193 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: status_report
+2023-04-08 20:42:04,193 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-08 20:42:04,193 DEBUG   SenderThread:15860 [sender.py:send():375] send: files
+2023-04-08 20:42:04,193 INFO    SenderThread:15860 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-08 20:42:04,200 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-08 20:42:04,200 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: stop_status
+2023-04-08 20:42:04,636 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\conda-environment.yaml
+2023-04-08 20:42:04,636 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\wandb-metadata.json
+2023-04-08 20:42:04,692 DEBUG   SenderThread:15860 [sender.py:send():375] send: telemetry
+2023-04-08 20:42:04,692 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: status_report
+2023-04-08 20:42:05,170 INFO    wandb-upload_0:15860 [upload_job.py:push():137] Uploaded file C:\Users\Administrator\AppData\Local\Temp\tmphxaxcgzuwandb\dkcl4cb5-wandb-metadata.json
+2023-04-08 20:42:05,648 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\output.log
+2023-04-08 20:42:07,673 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\output.log
+2023-04-08 20:42:09,723 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: status_report
+2023-04-08 20:42:14,774 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: status_report
+2023-04-08 20:42:15,759 DEBUG   SenderThread:15860 [sender.py:send():375] send: exit
+2023-04-08 20:42:15,759 INFO    SenderThread:15860 [sender.py:send_exit():598] handling exit code: 1
+2023-04-08 20:42:15,760 INFO    SenderThread:15860 [sender.py:send_exit():600] handling runtime: 20
+2023-04-08 20:42:15,761 INFO    SenderThread:15860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-08 20:42:15,761 INFO    SenderThread:15860 [sender.py:send_exit():606] send defer
+2023-04-08 20:42:15,762 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,762 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-08 20:42:15,762 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,762 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-08 20:42:15,762 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 1
+2023-04-08 20:42:15,762 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,762 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-08 20:42:15,762 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,762 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-08 20:42:15,762 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 2
+2023-04-08 20:42:15,762 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,762 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-08 20:42:15,762 INFO    HandlerThread:15860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-08 20:42:15,762 DEBUG   SystemMonitor:15860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-08 20:42:15,762 INFO    HandlerThread:15860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-08 20:42:15,762 DEBUG   SystemMonitor:15860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-08 20:42:15,767 INFO    HandlerThread:15860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-08 20:42:15,767 DEBUG   SystemMonitor:15860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-08 20:42:15,785 INFO    HandlerThread:15860 [interfaces.py:finish():202] Joined gpu monitor
+2023-04-08 20:42:15,785 INFO    HandlerThread:15860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-08 20:42:15,785 INFO    HandlerThread:15860 [interfaces.py:finish():202] Joined network monitor
+2023-04-08 20:42:15,786 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,786 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-08 20:42:15,786 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 3
+2023-04-08 20:42:15,786 DEBUG   SenderThread:15860 [sender.py:send():375] send: stats
+2023-04-08 20:42:15,786 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,786 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-08 20:42:15,786 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,786 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-08 20:42:15,786 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 4
+2023-04-08 20:42:15,786 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,786 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-08 20:42:15,786 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,786 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-08 20:42:15,786 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 5
+2023-04-08 20:42:15,786 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,786 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-08 20:42:15,787 DEBUG   SenderThread:15860 [sender.py:send():375] send: summary
+2023-04-08 20:42:15,787 INFO    SenderThread:15860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-08 20:42:15,787 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,787 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-08 20:42:15,787 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 6
+2023-04-08 20:42:15,788 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:15,788 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-08 20:42:15,788 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:15,788 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-08 20:42:15,790 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: status_report
+2023-04-08 20:42:16,088 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 7
+2023-04-08 20:42:16,088 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:16,089 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-08 20:42:16,089 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:16,089 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-08 20:42:16,745 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 8
+2023-04-08 20:42:16,746 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:16,746 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-08 20:42:16,746 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:16,746 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-08 20:42:16,746 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\config.yaml
+2023-04-08 20:42:16,747 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\wandb-summary.json
+2023-04-08 20:42:16,747 INFO    Thread-16 :15860 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\output.log
+2023-04-08 20:42:16,747 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 9
+2023-04-08 20:42:16,747 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:16,747 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-08 20:42:16,747 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:16,747 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-08 20:42:16,747 INFO    SenderThread:15860 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-08 20:42:16,773 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-08 20:42:17,754 INFO    SenderThread:15860 [dir_watcher.py:finish():395] scan: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files
+2023-04-08 20:42:17,754 INFO    SenderThread:15860 [dir_watcher.py:finish():409] scan save: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\conda-environment.yaml conda-environment.yaml
+2023-04-08 20:42:17,754 INFO    SenderThread:15860 [dir_watcher.py:finish():409] scan save: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\config.yaml config.yaml
+2023-04-08 20:42:17,756 INFO    SenderThread:15860 [dir_watcher.py:finish():409] scan save: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\output.log output.log
+2023-04-08 20:42:17,758 INFO    SenderThread:15860 [dir_watcher.py:finish():409] scan save: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\requirements.txt requirements.txt
+2023-04-08 20:42:17,760 INFO    SenderThread:15860 [dir_watcher.py:finish():409] scan save: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\wandb-metadata.json wandb-metadata.json
+2023-04-08 20:42:17,760 INFO    SenderThread:15860 [dir_watcher.py:finish():409] scan save: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\wandb-summary.json wandb-summary.json
+2023-04-08 20:42:17,762 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 10
+2023-04-08 20:42:17,762 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-08 20:42:17,762 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:17,764 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-08 20:42:17,765 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:17,765 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-08 20:42:17,765 INFO    SenderThread:15860 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-08 20:42:17,784 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-08 20:42:17,784 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-08 20:42:18,439 INFO    wandb-upload_0:15860 [upload_job.py:push():137] Uploaded file C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\conda-environment.yaml
+2023-04-08 20:42:18,711 INFO    wandb-upload_1:15860 [upload_job.py:push():137] Uploaded file C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\config.yaml
+2023-04-08 20:42:18,797 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-08 20:42:18,797 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-08 20:42:18,986 INFO    wandb-upload_2:15860 [upload_job.py:push():137] Uploaded file C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\output.log
+2023-04-08 20:42:19,001 INFO    wandb-upload_3:15860 [upload_job.py:push():137] Uploaded file C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\requirements.txt
+2023-04-08 20:42:19,003 INFO    wandb-upload_4:15860 [upload_job.py:push():137] Uploaded file C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\files\wandb-summary.json
+2023-04-08 20:42:19,216 INFO    Thread-15 :15860 [sender.py:transition_state():626] send defer: 11
+2023-04-08 20:42:19,217 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:19,217 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-08 20:42:19,217 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:19,217 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-08 20:42:19,217 INFO    SenderThread:15860 [file_pusher.py:join():173] waiting for file pusher
+2023-04-08 20:42:19,217 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 12
+2023-04-08 20:42:19,217 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:19,217 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-08 20:42:19,218 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:19,218 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-08 20:42:19,475 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 13
+2023-04-08 20:42:19,475 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:19,476 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-08 20:42:19,476 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:19,476 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-08 20:42:19,476 INFO    SenderThread:15860 [sender.py:transition_state():626] send defer: 14
+2023-04-08 20:42:19,477 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: defer
+2023-04-08 20:42:19,477 DEBUG   SenderThread:15860 [sender.py:send():375] send: final
+2023-04-08 20:42:19,477 INFO    HandlerThread:15860 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-08 20:42:19,477 DEBUG   SenderThread:15860 [sender.py:send():375] send: footer
+2023-04-08 20:42:19,477 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: defer
+2023-04-08 20:42:19,477 INFO    SenderThread:15860 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-08 20:42:19,478 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-08 20:42:19,478 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-08 20:42:19,478 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: server_info
+2023-04-08 20:42:19,478 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-08 20:42:19,478 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-08 20:42:19,478 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-08 20:42:19,478 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-08 20:42:19,479 DEBUG   SenderThread:15860 [sender.py:send_request():402] send_request: server_info
+2023-04-08 20:42:19,975 INFO    MainThread:15860 [wandb_run.py:_footer_history_summary_info():3476] rendering history
+2023-04-08 20:42:19,975 INFO    MainThread:15860 [wandb_run.py:_footer_history_summary_info():3508] rendering summary
+2023-04-08 20:42:19,975 INFO    MainThread:15860 [wandb_run.py:_footer_sync_info():3434] logging synced files
+2023-04-08 20:42:19,976 DEBUG   HandlerThread:15860 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-08 20:42:19,977 INFO    HandlerThread:15860 [handler.py:finish():845] shutting down handler
+2023-04-08 20:42:20,479 INFO    WriterThread:15860 [datastore.py:close():298] close: C:\Users\Administrator\OneDrive\Documents\Deep learning\Super Resolution\Models\2017-WassersteinGAN-SimpleVersion\wandb\run-20230408_204153-ux5z6yml\run-ux5z6yml.wandb
+2023-04-08 20:42:20,980 INFO    SenderThread:15860 [sender.py:finish():1550] shutting down sender
+2023-04-08 20:42:20,980 INFO    SenderThread:15860 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-08 20:42:20,981 INFO    SenderThread:15860 [file_pusher.py:join():173] waiting for file pusher
