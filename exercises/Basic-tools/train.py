@@ -146,7 +146,7 @@ if __name__ == '__main__':
                 optimizer.step()
 
                 # 清空模型梯度
-                model.zero_grad()
+                optimizer.zero_grad()
 
                 # 更新进度条&显示损失及指标
                 p_bar.update(args.batch_size)
