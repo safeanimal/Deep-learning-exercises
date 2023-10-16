@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/official implementaion/2014-SRCNN" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/official implementaion/2017-EDSR" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/official implementaion/2018-ESRGAN" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/official implementaion/2019-SinGAN" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/official implementaion/2021-SwinIR" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/official implementaion/2022-swin2sr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/personal implementation/2017-WassersteinGAN" vcs="Git" />
+  </component>
+</project>

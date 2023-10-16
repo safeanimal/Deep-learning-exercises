@@ -57,6 +57,10 @@ def compute_loss(outputs, targets):
     return None
 
 
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+
 if __name__ == '__main__':
     parser = set_parameters()
     args = parser.parse_args()  # 可以通过args.x访问x参数
@@ -112,11 +116,10 @@ if __name__ == '__main__':
             # 设置进度条描述
             p_bar.set_description(f'Epoch: {epoch + 1}')
             # 分批次训练
-            for batch in dev_dataloader:
+            for batch in training_dataloader:
                 lr_images, hr_images = batch
                 lr_images = lr_images.to(device)
                 hr_images = hr_images.to(device)
-
 
                 # 得到输入数据
                 inputs = get_inputs()
