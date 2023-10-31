@@ -83,7 +83,7 @@ if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     # 加载模型
-    model_parameters = config['model'+str(model_num)]
+    model_parameters = config['saved_model'+str(model_num)]
     image_size = model_parameters['image_size']
     if model_num == 0:
         num_blocks = model_parameters['num_blocks']

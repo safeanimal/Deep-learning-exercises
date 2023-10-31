@@ -72,7 +72,7 @@ class SuperResolutionModel(nn.Module):
         return self
 
 # device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-# model = SuperResolutionModel().to(device)
+# saved_model = SuperResolutionModel().to(device)
 # x = torch.randn((10, 3, 240, 240), device=device)
-# out = model(x)
+# out = saved_model(x)
 # print(out.shape)

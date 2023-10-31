@@ -16,6 +16,8 @@ class SpatialAttention(nn.Module):
         min_out, _ = torch.min(x, dim=1, keepdim=True)
         # print(min_out.shape)
         y = torch.cat((mean_out, max_out, min_out), dim=1)
+        print('y', y.device)
+        print('conv', self.conv.weight.device)
         z = torch.sigmoid(self.conv(y))
 
         return x * z
@@ -158,7 +160,7 @@ class ResNet(nn.Module):
             self.project = nn.Linear(in_features=main.shape[-1], out_features=main.shape[-1])
 
     def forward(self, x):
-        y = F.leaky_relu(self.main(x))
+        y = F.relu(self.main(x))
         if self.has_projection:
             x = self.project(x)
         return x + y

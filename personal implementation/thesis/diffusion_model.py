@@ -1,42 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-
-class SpatialAttention(nn.Module):
-    def __init__(self, kernel_size=3):
-        super(SpatialAttention, self).__init__()
-        assert kernel_size in (3, 7), 'kernel size must be 3 or 7'
-        padding = 3 if kernel_size == 7 else 1
-
-        # Using a convolution layer to produce a 2D spatial attention map
-        self.conv1 = nn.Conv2d(2, 1, kernel_size, padding=padding, bias=False)
-        self.sigmoid = nn.Sigmoid()
-
-    def forward(self, x):
-        avg_out = torch.mean(x, dim=1, keepdim=True)
-        max_out, _ = torch.max(x, dim=1, keepdim=True)
-        x = torch.cat([avg_out, max_out], dim=1)
-        x = self.conv1(x)
-        return self.sigmoid(x)
-
-
-class ChannelAttention(nn.Module):
-    def __init__(self, in_planes=64, ratio=2):
-        super(ChannelAttention, self).__init__()
-        self.avg_pool = nn.AdaptiveAvgPool2d(1)
-        self.fc = nn.Sequential(
-            nn.Linear(in_planes, in_planes // ratio, bias=False),
-            nn.ReLU(inplace=True),
-            nn.Linear(in_planes // ratio, in_planes, bias=False),
-            nn.Sigmoid()
-        )
-
-    def forward(self, x):
-        b, c, _, _ = x.size()
-        y = self.avg_pool(x).view(b, c)
-        y = self.fc(y).view(b, c, 1, 1)
-        return x * y.expand_as(x)
+from blocks import SpatialAttention, ChannelAttention, ResNet
+from common import TemporalEmbedding
 
 
 class PBMSA(nn.Module):
@@ -97,14 +63,15 @@ class PBMSA(nn.Module):
 
 
 class AttentionBlock(nn.Module):
-    def __init__(self, CA_in_planes, img_size=480, patch_size=8, embed_dim=256, num_heads=8):
+    def __init__(self, CA_in_planes, img_size=512, patch_size=8, embed_dim=256, num_heads=8):
         super(AttentionBlock, self).__init__()
         self.sa = SpatialAttention()
-        self.ca = ChannelAttention(in_planes=CA_in_planes)
+        self.ca = ChannelAttention(planes=CA_in_planes, ratio=4)
         self.pbmsa = PBMSA(patch_size, embed_dim, num_heads, channels=CA_in_planes)
         self.ln = nn.LayerNorm(normalized_shape=[CA_in_planes, img_size, img_size], elementwise_affine=False)
         self.relu = nn.ReLU(inplace=True)
-        self.conv = nn.Conv2d(in_channels=1+2*CA_in_planes, out_channels=CA_in_planes, kernel_size=3, stride=1, padding=1)
+        self.conv = nn.Conv2d(in_channels=3 * CA_in_planes, out_channels=CA_in_planes, kernel_size=3, stride=1,
+                              padding=1)
 
     def forward(self, x):
         sa_out = self.sa(x)
@@ -120,29 +87,47 @@ class AttentionBlock(nn.Module):
         return out
 
 
-class SuperResolutionModel(nn.Module):
-    def __init__(self, num_blocks, img_size, first_conv_out_channels=16):
-        super(SuperResolutionModel, self).__init__()
-
+class GenerativeModel(nn.Module):
+    def __init__(self, image_size=512, first_conv_out_channels=16):
+        super(GenerativeModel, self).__init__()
+        self.embedding1 = TemporalEmbedding(dim_emb=1024, dim_out=3)
         self.feature_extractor = nn.Conv2d(in_channels=3, out_channels=first_conv_out_channels, kernel_size=3,
                                            padding=1)
-        self.blocks = nn.Sequential(*[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size) for _ in range(num_blocks)])
+        self.embedding2 = TemporalEmbedding(dim_emb=1024, dim_out=first_conv_out_channels)
+        self.block1 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
+        self.block2 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
+        self.block3 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
+        self.block4 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
+
         self.conv1 = nn.Conv2d(in_channels=first_conv_out_channels, out_channels=256, kernel_size=3,
                                padding=1)
-        self.act1 = nn.LeakyReLU()
-        self.pixel_shuffle1 = nn.PixelShuffle(upscale_factor=2)
-        self.conv2 = nn.Conv2d(in_channels=64, out_channels=32, kernel_size=3, stride=1, padding=1)
-        self.pixel_shuffle2 = nn.PixelShuffle(upscale_factor=2)
-        self.act2 = nn.LeakyReLU()
-        self.conv3 = nn.Conv2d(in_channels=8, out_channels=3, kernel_size=3,
+        self.embedding3 = TemporalEmbedding(dim_emb=1024, dim_out=256)
+        self.conv2 = nn.Conv2d(in_channels=256, out_channels=32, kernel_size=3, stride=1, padding=1)
+        self.embedding4 = TemporalEmbedding(dim_emb=1024, dim_out=32)
+        self.conv3 = nn.Conv2d(in_channels=32, out_channels=3, kernel_size=3,
                                padding=1)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor, t: torch.Tensor):
+        x = self.embedding1(x, t)
         x1 = self.feature_extractor(x)
-        x2 = self.blocks(x1)
-        x3 = self.act1(self.conv1(x2))
-        x4 = self.pixel_shuffle1(x3)
-        x5 = self.act2(self.conv2(x4))
-        x6 = self.pixel_shuffle2(x5)
-        hr_image = self.conv3(x6)
-        return hr_image
+        x1 = self.embedding2(x1, t)
+        x2 = self.block1(x1)
+        x2 = self.embedding2(x2, t)
+
+        x3 = self.block2(x2)
+        x3 = self.embedding2(x3, t)
+
+        x4 = self.block3(x3)
+        x4 = self.embedding2(x4, t)
+
+        x5 = self.block4(x4)
+        x5 = self.embedding2(x5, t)
+
+        x6 = F.relu((self.conv1(x5)))
+        x6 = self.embedding3(x6, t)
+
+        x7 = F.relu((self.conv2(x6)))
+        x7 = self.embedding4(x7, t)
+
+        denoised_image = self.conv3(x7)
+        return denoised_image

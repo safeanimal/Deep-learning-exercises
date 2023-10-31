@@ -29,7 +29,7 @@ hyperparameters_config = config['hyperparameters']
 model_num = hyperparameters_config['model_num']
 
 # 加载模型
-model_parameters = config['model'+str(model_num)]
+model_parameters = config['saved_model'+str(model_num)]
 image_size = model_parameters['image_size']
 if model_num == 0:
     num_blocks = model_parameters['num_blocks']
