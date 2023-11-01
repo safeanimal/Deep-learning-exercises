@@ -16,8 +16,6 @@ class SpatialAttention(nn.Module):
         min_out, _ = torch.min(x, dim=1, keepdim=True)
         # print(min_out.shape)
         y = torch.cat((mean_out, max_out, min_out), dim=1)
-        print('y', y.device)
-        print('conv', self.conv.weight.device)
         z = torch.sigmoid(self.conv(y))
 
         return x * z

@@ -7,7 +7,7 @@ class ImageDataset(Dataset):
     """
     """
 
-    def __init__(self, image_folder):
+    def __init__(self, image_folder, image_size=128):
         super().__init__()
         self.image_names = sorted(os.listdir(image_folder))
         self.image_folder = image_folder
@@ -17,6 +17,7 @@ class ImageDataset(Dataset):
         #     raise ValueError('the samples_size should be in the range of [1, img_number]')
 
         self.transform = transforms.Compose([
+            transforms.Resize(size=(image_size, image_size)),
             transforms.ToTensor()
         ])
 

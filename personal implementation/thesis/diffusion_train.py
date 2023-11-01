@@ -9,6 +9,8 @@ from diffusion_dataset import ImageDataset
 from utils import show_images_tensor
 from diffusion_model import GenerativeModel
 
+
+
 if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')  # torch.device('cpu')
     torch.backends.cudnn.benchmark = True
@@ -19,7 +21,6 @@ if __name__ == '__main__':
 
     image_folder = config['image_folder']
 
-
     batch_size = config['batch_size']
     num_workers = config['num_workers']
     lr = config['lr']
@@ -28,22 +29,7 @@ if __name__ == '__main__':
 
     image_size = config['image_size']
     channels = 3
-    image_size = (-1, channels, image_size, image_size)
-
-    # 训练集
-    training_dataset = ImageDataset(image_folder=image_folder)
-    # 训练集大小
-    training_samples_size = len(training_dataset)
-
-
-    # 生成dataloader
-    training_dataloader = DataLoader(training_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True)
-
-    # 展示dataloader里的数据（图片）
-    for batch in training_dataloader:
-        images = batch
-        show_images_tensor(4, images)
-        break
+    image_shape = (-1, channels, image_size, image_size)
 
     T = config['T']
     beta_min = config['beta_min']
@@ -67,7 +53,7 @@ if __name__ == '__main__':
 
     # 给定x0、时刻t计算噪声eps，并按一定方式添加到x0中得到加噪图像xt
     # Checked
-    def get_xt_given_x0_and_t(x0: torch.Tensor, t: torch.Tensor, eps: torch.Tensor)->torch.Tensor:
+    def get_xt_given_x0_and_t(x0: torch.Tensor, t: torch.Tensor, eps: torch.Tensor) -> torch.Tensor:
         sqrt_alpha_bar_t = torch.sqrt(alpha_bar[t]).view(-1, 1, 1, 1)
         sqrt_one_minus_sqrt_alpha_bar_t = torch.sqrt(1 - alpha_bar[t]).view(-1, 1, 1, 1)
         mean = sqrt_alpha_bar_t * x0
@@ -89,7 +75,7 @@ if __name__ == '__main__':
                 xt = get_xt_given_x0_and_t(x0, t, eps)
                 diffusion.append(xt)
             # 还原为向量
-            diffusion = torch.stack(diffusion).reshape(*image_size)
+            diffusion = torch.stack(diffusion).reshape(*image_shape)
             break
         show_images_tensor(5, diffusion.cpu())
 
@@ -109,7 +95,7 @@ if __name__ == '__main__':
             t = (torch.zeros((1,)) + i).long().to(device)
             # print('t', t.shape)
             # ---------------这里模型应该输出一个高分辨率图像--------------------
-            eps_theta = model(xt, t).reshape(*image_size)
+            eps_theta = model(xt, t).reshape(*image_shape)
             # print('eps_theta', eps_theta.shape)
             assert not torch.any(torch.isnan(eps_theta)), 'in function `sampling`, eps_theta is nan!'
 
@@ -143,7 +129,7 @@ if __name__ == '__main__':
                 1 - alpha_bar[i] / alpha_bar[i - step_num])
             assert not torch.any(torch.isnan(sig_tao)), 'in function `DDIM_sampling`, sig_tao is nan!'
             t = (torch.zeros((1,)) + i).long().to(device)
-            eps_theta = model(xt, t).reshape(*image_size)
+            eps_theta = model(xt, t).reshape(*image_shape)
             assert not torch.any(torch.isnan(eps_theta)), 'in function `DDIM_sampling`, eps_theta is nan!'
             f_theta = (xt - torch.sqrt(one_minus_alpha_tao) * eps_theta) / torch.sqrt(alpha_bar[i])
             assert not torch.any(torch.isnan(f_theta)), 'in function `DDIM_sampling`, f_theta is nan!'
@@ -160,12 +146,25 @@ if __name__ == '__main__':
                 xt = first + third
         return xt
 
+    # 训练集
+    training_dataset = ImageDataset(image_folder=image_folder, image_size=image_size)
+    # 训练集大小
+    training_samples_size = len(training_dataset)
 
-    model = GenerativeModel().to(device)
+    # 生成dataloader
+    training_dataloader = DataLoader(training_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True)
+
+    # 展示dataloader里的数据（图片）
+    for batch in training_dataloader:
+        images = batch
+        show_images_tensor(4, images)
+        break
+
+    model = GenerativeModel(image_size=image_size).to(device)
 
     criterion = nn.MSELoss()
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-7)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-7)
 
     for i in range(epoch):
         with tqdm(total=training_samples_size, ncols=100) as p_bar:
@@ -181,7 +180,7 @@ if __name__ == '__main__':
 
                 xt = get_xt_given_x0_and_t(x0, t, eps)
 
-                eps_theta = model(xt, t).reshape(*image_size)
+                eps_theta = model(xt, t).reshape(*image_shape)
 
                 # assert not torch.isnan(eps_theta).any(), "NaN values found in eps_theta"
 
@@ -207,7 +206,7 @@ if __name__ == '__main__':
 
     model.eval() # 开启评估模式！
     with torch.no_grad():
-        noise = torch.randn(*image_size).to(device)
+        noise = torch.randn(batch_size, *image_shape[1:]).to(device)
         sampling_results = sampling(noise, T, model, 1, T, 50)
     sampling_results = sampling_results.detach().cpu()
-    show_images_tensor(5, sampling_results.reshape(*image_size).cpu(), 4)
+    show_images_tensor(5, sampling_results.reshape(*image_shape).cpu())

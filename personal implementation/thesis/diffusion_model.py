@@ -63,12 +63,12 @@ class PBMSA(nn.Module):
 
 
 class AttentionBlock(nn.Module):
-    def __init__(self, CA_in_planes, img_size=512, patch_size=8, embed_dim=256, num_heads=8):
+    def __init__(self, CA_in_planes, image_size=256, patch_size=8, embed_dim=256, num_heads=8):
         super(AttentionBlock, self).__init__()
         self.sa = SpatialAttention()
         self.ca = ChannelAttention(planes=CA_in_planes, ratio=4)
         self.pbmsa = PBMSA(patch_size, embed_dim, num_heads, channels=CA_in_planes)
-        self.ln = nn.LayerNorm(normalized_shape=[CA_in_planes, img_size, img_size], elementwise_affine=False)
+        self.ln = nn.LayerNorm(normalized_shape=[CA_in_planes, image_size, image_size], elementwise_affine=False)
         self.relu = nn.ReLU(inplace=True)
         self.conv = nn.Conv2d(in_channels=3 * CA_in_planes, out_channels=CA_in_planes, kernel_size=3, stride=1,
                               padding=1)
@@ -81,30 +81,39 @@ class AttentionBlock(nn.Module):
         pbmsa_out = self.pbmsa(x)
         # print('pbmsa_out', pbmsa_out.shape)
         concat_out = torch.cat([sa_out, ca_out, pbmsa_out], dim=1)  # (batch_size, 17, ...)
-        # print('concat_out', concat_out.shape)
         # mlp_out = self.mlp(concat_out)
         out = self.ln(self.conv(self.relu(concat_out)))
         return out
 
 
 class GenerativeModel(nn.Module):
-    def __init__(self, image_size=512, first_conv_out_channels=16):
+    def __init__(self, image_size=256, first_conv_out_channels=64):
         super(GenerativeModel, self).__init__()
-        self.embedding1 = TemporalEmbedding(dim_emb=1024, dim_out=3)
-        self.feature_extractor = nn.Conv2d(in_channels=3, out_channels=first_conv_out_channels, kernel_size=3,
-                                           padding=1)
-        self.embedding2 = TemporalEmbedding(dim_emb=1024, dim_out=first_conv_out_channels)
-        self.block1 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
-        self.block2 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
-        self.block3 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
-        self.block4 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=image_size))
+        self.embedding1 = TemporalEmbedding(dim_emb=512, dim_out=3)
+        self.feature_extractor = nn.Sequential(
+            nn.Conv2d(in_channels=3, out_channels=first_conv_out_channels, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=first_conv_out_channels, out_channels=first_conv_out_channels, kernel_size=3, padding=1))
 
-        self.conv1 = nn.Conv2d(in_channels=first_conv_out_channels, out_channels=256, kernel_size=3,
+        self.embedding2 = TemporalEmbedding(dim_emb=512, dim_out=first_conv_out_channels)
+        self.block1 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block2 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block3 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block4 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block5 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block6 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block7 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block8 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block9 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block10 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block11 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+        self.block12 = ResNet(AttentionBlock(CA_in_planes=first_conv_out_channels, image_size=image_size))
+
+        self.conv1 = nn.Conv2d(in_channels=first_conv_out_channels, out_channels=128, kernel_size=3,
                                padding=1)
-        self.embedding3 = TemporalEmbedding(dim_emb=1024, dim_out=256)
-        self.conv2 = nn.Conv2d(in_channels=256, out_channels=32, kernel_size=3, stride=1, padding=1)
-        self.embedding4 = TemporalEmbedding(dim_emb=1024, dim_out=32)
-        self.conv3 = nn.Conv2d(in_channels=32, out_channels=3, kernel_size=3,
+        self.embedding3 = TemporalEmbedding(dim_emb=512, dim_out=128)
+        self.conv2 = nn.Conv2d(in_channels=128, out_channels=64, kernel_size=3, stride=1, padding=1)
+        self.embedding4 = TemporalEmbedding(dim_emb=512, dim_out=64)
+        self.conv3 = nn.Conv2d(in_channels=64, out_channels=3, kernel_size=3,
                                padding=1)
 
     def forward(self, x: torch.Tensor, t: torch.Tensor):
@@ -120,14 +129,35 @@ class GenerativeModel(nn.Module):
         x4 = self.block3(x3)
         x4 = self.embedding2(x4, t)
 
-        x5 = self.block4(x4)
-        x5 = self.embedding2(x5, t)
+        # x5 = self.block4(x4)
+        # x5 = self.embedding2(x5, t)
+        #
+        # x6 = self.block4(x5)
+        # x6 = self.embedding2(x6, t)
 
-        x6 = F.relu((self.conv1(x5)))
-        x6 = self.embedding3(x6, t)
+        # x7 = self.block4(x6)
+        # x7 = self.embedding2(x7, t)
+        #
+        # x8 = self.block4(x7)
+        # x8 = self.embedding2(x8, t)
+        #
+        # x9 = self.block4(x8)
+        # x9 = self.embedding2(x9, t)
+        #
+        # x10 = self.block4(x9)
+        # x10 = self.embedding2(x10, t)
+        #
+        # x11 = self.block4(x10)
+        # x11 = self.embedding2(x11, t)
+        #
+        # x12 = self.block4(x11)
+        # x12 = self.embedding2(x12, t)
 
-        x7 = F.relu((self.conv2(x6)))
-        x7 = self.embedding4(x7, t)
+        x13 = F.relu((self.conv1(x4)))
+        x13 = self.embedding3(x13, t)
 
-        denoised_image = self.conv3(x7)
+        x14 = F.relu((self.conv2(x13)))
+        x14 = self.embedding4(x14, t)
+
+        denoised_image = self.conv3(x14)
         return denoised_image
