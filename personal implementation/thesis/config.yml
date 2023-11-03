@@ -15,14 +15,14 @@ hyperparameters:
   add_perceptual_loss: false #添加感知损失
   add_edge_loss: true # 添加边缘损失
   coefficient_perceptual_loss: 0.0001 #感知损失的权重系数
-  coefficient_edge_loss: 1 #边缘损失的权重系数
+  coefficient_edge_loss: 0.1 #边缘损失的权重系数
   optimizer_name: Adam
-  model_num: 2 #选择的模型编号
+  model_num: 0 #选择的模型编号
 
   
 model0:
   num_blocks: 4
-  image_size: 120
+  image_size: 128
 
 model1:
   image_size: 120

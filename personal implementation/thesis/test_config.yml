@@ -1,0 +1,11 @@
+test_dirs: #需要测试的图片路径
+  - D:\Materials\dataset\test\BSD100_SR\image_SRF_4
+  - D:\Materials\dataset\test\Set5_SR\Set5\image_SRF_4
+  - D:\Materials\dataset\test\Set14_SR\Set14\image_SRF_4
+  - D:\Materials\dataset\test\Urban100_SR\image_SRF_4
+
+model_parameters_path: save\4blocks.pth
+
+test_type: LR # 需要测试的类型
+
+log_path: log # 测试结果输出路径

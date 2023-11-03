@@ -3,7 +3,7 @@ from dataset import ImageDataset
 import utils
 from tqdm import tqdm
 import wandb
-from model2 import SuperResolutionModel
+from model0 import SuperResolutionModel
 from logger import AverageLogger
 import copy
 import os
