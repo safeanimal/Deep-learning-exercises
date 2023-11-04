@@ -16,7 +16,7 @@ if __name__ == '__main__':
     torch.backends.cudnn.benchmark = True
 
     # 读取diffusion的配置
-    with open('diffusion_config.yml', 'r', encoding='utf-8') as file:
+    with open('../diffusion_config.yml', 'r', encoding='utf-8') as file:
         config = yaml.safe_load(file)
 
     image_folder = config['image_folder']

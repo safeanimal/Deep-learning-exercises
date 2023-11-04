@@ -6,7 +6,7 @@ from diffusion_model import GenerativeModel
 
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 # 读取diffusion的配置
-with open('diffusion_config.yml', 'r', encoding='utf-8') as file:
+with open('../diffusion_config.yml', 'r', encoding='utf-8') as file:
     config = yaml.safe_load(file)
 
 image_folder = config['image_folder']
