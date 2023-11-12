@@ -161,6 +161,7 @@ class UNetModel(nn.Module):
         # $\cos\Bigg(\frac{t}{10000^{\frac{2i}{c}}}\Bigg)$ and $\sin\Bigg(\frac{t}{10000^{\frac{2i}{c}}}\Bigg)$
         return torch.cat([torch.cos(args), torch.sin(args)], dim=-1)
 
+    # TODO: cond输入HR-GT的Res编码
     def forward(self, x: torch.Tensor, time_steps: torch.Tensor, cond: torch.Tensor):
         """
         :param x: is the input feature map of shape `[batch_size, channels, width, height]`

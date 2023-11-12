@@ -8,6 +8,8 @@ summary: >
 # Generate images using [stable diffusion](../index.html) with a prompt from a given image
 """
 # TODO: 有一个想法，保持image->image，但是添加一个条件，也就是使用GT-HR的残差，编码后加入模型中进行训练，目标函数为L1或MSE（GT和HR）
+#   写一个Dataset，每次获取HR (插值得到), GT, Res，模型将prompts置空，输入HR（当作img2img中的输入img）和Res（编码后加入stable diffusion），期望获得GT
+#   Res通过RRDB或者SwinTransformerLayer进行提取特征，然后加入Unet
 import argparse
 from pathlib import Path
 
@@ -82,6 +84,7 @@ class Img2Img:
             else:
                 un_cond = None
             # Get the prompt embeddings
+            # TODO: 这里的文本cond要变成HR-GT的Res编码cond
             cond = self.model.get_text_conditioning(prompts)
             # Add noise to the original image
             x = self.sampler.q_sample(orig, t_index)

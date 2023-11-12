@@ -88,6 +88,7 @@ class Txt2Img:
                 un_cond = None
             # Get the prompt embeddings
             cond = self.model.get_text_conditioning(prompts)
+            print(cond.shape)
             # [Sample in the latent space](../sampler/index.html).
             # `x` will be of shape `[batch_size, c, h / f, w / f]`
             x = self.sampler.sample(cond=cond,
@@ -145,7 +146,7 @@ def main():
     # txt2img = Txt2Img(checkpoint_path=lab.get_data_path() / 'stable-diffusion' / 'sd-v1-4.ckpt',
     #                   sampler_name=opt.sampler_name,
     #                   n_steps=opt.steps)
-    txt2img = Txt2Img(checkpoint_path=Path("E:/AI/checkpoints/stable-diffusion-v-1-4-original/sd-v1-4.ckpt"),
+    txt2img = Txt2Img(checkpoint_path=Path("F:/checkpoints/stable-diffusion-v-1-4-original/sd-v1-4.ckpt"),
                       sampler_name=opt.sampler_name,
                       n_steps=opt.steps)
 
