@@ -5,15 +5,17 @@ from lightning.pytorch.utilities.types import STEP_OUTPUT, OptimizerLRScheduler
 from unet import UNetModel
 from autoencoder import Autoencoder
 
+
 class SuperResolution(L.LightningModule):
     def __init__(self):
         super().__init__()
-        self.unet = UNetModel() # backbone
+        self.unet = UNetModel()  # backbone
         # TODO: need a encoder and a decoder which are suitable for super-resolution task,
         #   insight: pre-train a swinIR, take the reconstruction part as decoder
         #   take the remaining part as encoder
 
     def training_step(self, batch, batch_idx):
+        pass
 
     # TODO: freeze the parameters of unet, only train the encoder and decoder
     #  encode LR_image as x_T
@@ -28,4 +30,4 @@ class SuperResolution(L.LightningModule):
         return optimizer
 
     def validation_step(self, batch, batch_idx):
-
+        pass

@@ -4,8 +4,8 @@ from PIL import Image
 
 
 class ImageDataset(Dataset):
-    def __int__(self, image1_path, image2_path):
-        super().__int__()
+    def __init__(self, image1_path, image2_path):
+        super().__init__()
         self.image1 = Image.open(image1_path).convert('RGB')
         self.image2 = Image.open(image2_path).convert('RGB')
 
