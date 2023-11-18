@@ -21,6 +21,7 @@ class SRDataset(Dataset):
         #     raise ValueError('the samples_size should be in the range of [1, img_number]')
 
         self.transform = transforms.Compose([
+
             transforms.ToTensor(),
         ])
 
@@ -36,6 +37,7 @@ class SRDataset(Dataset):
         lr_img = Image.open(lr_img_path).convert('RGB')
 
         lr_img = self.transform(lr_img)
+
         hr_img = transforms.Resize(size=gt_img.shape[1:], interpolation=InterpolationMode.BICUBIC)(lr_img)
 
         res_img = gt_img - hr_img
@@ -51,3 +53,4 @@ class SRDataset(Dataset):
 #     for batch in data:
 #         print(batch[0].shape, batch[1].shape)
 #         break
+

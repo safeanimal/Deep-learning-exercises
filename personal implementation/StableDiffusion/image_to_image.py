@@ -109,7 +109,7 @@ def main():
         "--prompt",
         type=str,
         nargs="?",
-        default="a painting of a cute monkey playing guitar",
+        default="a painting of a blue hair anime girl",
         help="the prompt to render"
     )
 
@@ -117,6 +117,7 @@ def main():
         "--orig-img",
         type=str,
         nargs="?",
+        default='D:/Materials/dataset/anime-face-512by512/portraits/18255660.jpg',
         help="path to the input image"
     )
 
@@ -134,7 +135,7 @@ def main():
     opt = parser.parse_args()
     set_seed(42)
 
-    img2img = Img2Img(checkpoint_path=lab.get_data_path() / 'stable-diffusion' / 'sd-v1-4.ckpt',
+    img2img = Img2Img(checkpoint_path=Path("E:/AI/checkpoints/stable-diffusion-v-1-4-original/sd-v1-4.ckpt"),
                       ddim_steps=opt.steps)
 
     with monit.section('Generate'):

@@ -146,7 +146,7 @@ def main():
     # txt2img = Txt2Img(checkpoint_path=lab.get_data_path() / 'stable-diffusion' / 'sd-v1-4.ckpt',
     #                   sampler_name=opt.sampler_name,
     #                   n_steps=opt.steps)
-    txt2img = Txt2Img(checkpoint_path=Path("F:/checkpoints/stable-diffusion-v-1-4-original/sd-v1-4.ckpt"),
+    txt2img = Txt2Img(checkpoint_path=Path("E:/AI/checkpoints/stable-diffusion-v-1-4-original/sd-v1-4.ckpt"),
                       sampler_name=opt.sampler_name,
                       n_steps=opt.steps)
 
@@ -155,8 +155,10 @@ def main():
     #                                                                  '-original/sd-v1-4-encoder.ckpt')
     # torch.save(txt2img.model.first_stage_model.decoder.state_dict(), 'E:/AI/checkpoints/stable-diffusion-v-1-4'
     #                                                                  '-original/sd-v1-4-decoder.ckpt')
+
     torch.save(txt2img.model.first_stage_model.state_dict(), 'G:/checkpoints/stable-diffusion-v-1-4-original'
                                                                  '/sd-v1-4-auto-encoder.ckpt')
+
     # torch.save(txt2img.model.model.diffusion_model.state_dict(), 'E:/AI/checkpoints/stable-diffusion-v-1-4-original'
     #                                                              '/sd-v1-4-unet.ckpt')
 

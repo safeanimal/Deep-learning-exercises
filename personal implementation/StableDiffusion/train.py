@@ -93,3 +93,4 @@ if __name__ == '__main__':
     for batch_idx, batch in enumerate(train_loader):
         print(model.get_loss(batch, batch_idx).shape)
         break
+
