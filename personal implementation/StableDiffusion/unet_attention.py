@@ -11,7 +11,7 @@ summary: >
 This implements the transformer module used in [U-Net](unet.html) that
  gives $\epsilon_\text{cond}(x_t, c)$
 
-We have kept to the model definition and naming unchanged from
+We have kept to the sr_models definition and naming unchanged from
 [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion)
 so that we can load the checkpoints directly.
 """

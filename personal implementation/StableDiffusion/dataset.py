@@ -39,7 +39,7 @@ class SRDataset(Dataset):
         hr_img = transforms.Resize(size=gt_img.shape[1:], interpolation=InterpolationMode.BICUBIC)(lr_img)
 
         res_img = gt_img - hr_img
-        return res_img, gt_img
+        return lr_img, gt_img, res_img
 
     def __len__(self):
         return len(self.lr_img_names)

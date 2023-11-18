@@ -35,11 +35,11 @@ class Img2Img:
         """
         self.ddim_steps = ddim_steps
 
-        # Load [latent diffusion model](../latent_diffusion.html)
+        # Load [latent diffusion sr_models](../latent_diffusion.html)
         self.model = load_model(checkpoint_path)
         # Get device
         self.device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
-        # Move the model to device
+        # Move the sr_models to device
         self.model.to(self.device)
 
         # Initialize [DDIM sampler](../sampler/ddim.html)
@@ -92,7 +92,7 @@ class Img2Img:
             x = self.sampler.paint(x, cond, t_index,
                                    uncond_scale=uncond_scale,
                                    uncond_cond=un_cond)
-            # Decode the image from the [autoencoder](../model/autoencoder.html)
+            # Decode the image from the [autoencoder](../sr_models/autoencoder.html)
             images = self.model.autoencoder_decode(x)
 
         # Save images

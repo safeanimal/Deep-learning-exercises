@@ -71,7 +71,7 @@ with open('test_log.txt', mode='a', encoding='uft-8') as file:
 # lr_image = copy.deepcopy(original_image)
 # lr_image = lr_image.to(device)
 # lr_image = lr_image.reshape(1, *lr_image.shape)
-# hr_image = model(lr_image)
+# hr_image = sr_models(lr_image)
 #
 # lr_image = lr_image.cpu()
 # hr_image = hr_image.cpu()

@@ -1,7 +1,7 @@
 import torch
 
-from model.RRDBNet import RRDB
-from model.SwinIR import SwinTransformerBlock, PatchEmbed
+from sd_models.RRDBNet import RRDB
+from sd_models.SwinIR import SwinTransformerBlock, PatchEmbed
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -36,11 +36,11 @@ class ResidualEncoder(nn.Module):
         return x5.view(B, self.n_cond, self.d_cond)
 
 
-if __name__ == "__main__":
-    x_size = (128, 128)
-    res_encoder = ResidualEncoder(input_resolution=x_size).to('cuda:0')
-    x = torch.randn((16, 3, *x_size), device='cuda:0')
-    x = res_encoder(x, x_size)
-    print(x.shape)
+# if __name__ == "__main__":
+#     x_size = (128, 128)
+#     res_encoder = ResidualEncoder(input_resolution=x_size).to('cuda:0')
+#     x = torch.randn((16, 3, *x_size), device='cuda:0')
+#     x = res_encoder(x, x_size)
+#     print(x.shape)
 
 

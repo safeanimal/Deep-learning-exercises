@@ -134,7 +134,7 @@ if __name__ == "__main__":
     #  to mean=0, stdev=0.02.
     netG.apply(weights_init)
 
-    # Print the model
+    # Print the sr_models
     print(netG)
 
     class Discriminator(nn.Module):
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     #  to mean=0, stdev=0.2.
     netD.apply(weights_init)
 
-    # Print the model
+    # Print the sr_models
     print(netD)
 
 

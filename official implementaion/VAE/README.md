@@ -44,10 +44,10 @@ $ python run.py -c configs/<config-file-name.yaml>
 
 ```yaml
 model_params:
-  name: "<name of VAE model>"
+  name: "<name of VAE sr_models>"
   in_channels: 3
   latent_dim: 
-    .         # Other parameters required by the model
+    .         # Other parameters required by the sr_models
     .
     .
 

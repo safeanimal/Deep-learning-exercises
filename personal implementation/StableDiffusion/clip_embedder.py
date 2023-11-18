@@ -8,7 +8,7 @@ summary: >
 # CLIP Text Embedder
 
 This is used to get prompt embeddings for [stable diffusion](../index.html).
-It uses HuggingFace Transformers CLIP model.
+It uses HuggingFace Transformers CLIP sr_models.
 """
 
 from typing import List
@@ -23,7 +23,7 @@ class CLIPTextEmbedder(nn.Module):
 
     def __init__(self, version: str = "openai/clip-vit-large-patch14", device="cuda:0", max_length: int = 77):
         """
-        :param version: is the model version
+        :param version: is the sr_models version
         :param device: is the device
         :param max_length: is the max length of the tokenized prompt
         """

@@ -4,7 +4,7 @@ title: Denoising Diffusion Probabilistic Models (DDPM) Sampling
 summary: >
  Annotated PyTorch implementation/tutorial of
  Denoising Diffusion Probabilistic Models (DDPM) Sampling
- for stable diffusion model.
+ for stable diffusion sr_models.
 ---
 
 # Denoising Diffusion Probabilistic Models (DDPM) Sampling
@@ -13,7 +13,7 @@ For a simpler DDPM implementation refer to our [DDPM implementation](../../ddpm/
 We use same notations for $\alpha_t$, $\beta_t$ schedules, etc.
 """
 
-from typing import Optional, List
+from typing import Optional, List, Union
 
 import numpy as np
 import torch
@@ -21,7 +21,7 @@ import torch
 from labml import monit
 from latent_diffusion import LatentDiffusion
 from sampler import DiffusionSampler
-
+from super_resolution import SuperResolution
 
 class DDPMSampler(DiffusionSampler):
     """
@@ -48,9 +48,9 @@ class DDPMSampler(DiffusionSampler):
 
     model: LatentDiffusion
 
-    def __init__(self, model: LatentDiffusion):
+    def __init__(self, model: Union[LatentDiffusion, SuperResolution]):
         """
-        :param model: is the model to predict noise $\epsilon_\text{cond}(x_t, c)$
+        :param model: is the sr_models to predict noise $\epsilon_\text{cond}(x_t, c)$
         """
         super().__init__(model)
 

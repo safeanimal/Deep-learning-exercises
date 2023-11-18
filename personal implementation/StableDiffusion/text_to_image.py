@@ -39,11 +39,11 @@ class Txt2Img:
         :param n_steps: is the number of sampling steps
         :param ddim_eta: is the [DDIM sampling](../sampler/ddim.html) $\eta$ constant
         """
-        # Load [latent diffusion model](../latent_diffusion.html)
+        # Load [latent diffusion sr_models](../latent_diffusion.html)
         self.model = load_model(checkpoint_path)
         # Get device
         self.device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
-        # Move the model to device
+        # Move the sr_models to device
         self.model.to(self.device)
 
         # Initialize [sampler](../sampler/index.html)
@@ -95,7 +95,7 @@ class Txt2Img:
                                     shape=[batch_size, c, h // f, w // f],
                                     uncond_scale=uncond_scale,
                                     uncond_cond=un_cond)
-            # Decode the image from the [autoencoder](../model/autoencoder.html)
+            # Decode the image from the [autoencoder](../sr_models/autoencoder.html)
             images = self.model.autoencoder_decode(x)
 
         # Save images
@@ -155,6 +155,8 @@ def main():
     #                                                                  '-original/sd-v1-4-encoder.ckpt')
     # torch.save(txt2img.model.first_stage_model.decoder.state_dict(), 'E:/AI/checkpoints/stable-diffusion-v-1-4'
     #                                                                  '-original/sd-v1-4-decoder.ckpt')
+    torch.save(txt2img.model.first_stage_model.state_dict(), 'G:/checkpoints/stable-diffusion-v-1-4-original'
+                                                                 '/sd-v1-4-auto-encoder.ckpt')
     # torch.save(txt2img.model.model.diffusion_model.state_dict(), 'E:/AI/checkpoints/stable-diffusion-v-1-4-original'
     #                                                              '/sd-v1-4-unet.ckpt')
 

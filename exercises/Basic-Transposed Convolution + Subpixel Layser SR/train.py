@@ -33,7 +33,7 @@ if __name__ == '__main__':
     # select the device
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-    # create model and move it to specified device
+    # create sr_models and move it to specified device
     model = SRG2().to(device)
 
     # enable the cudnn.benchmark to accelerate the training
@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
         wandb.log({'loss': loss_loger.avg})
 
-        # set the model to eval mode
+        # set the sr_models to eval mode
         model.eval()
         # use logger to log PSNR
         psnr_logger = AverageLogger()

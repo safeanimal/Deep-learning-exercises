@@ -4,7 +4,7 @@ title: Denoising Diffusion Implicit Models (DDIM) Sampling
 summary: >
  Annotated PyTorch implementation/tutorial of
  Denoising Diffusion Implicit Models (DDIM) Sampling
- for stable diffusion model.
+ for stable diffusion sr_models.
 ---
 
 # Denoising Diffusion Implicit Models (DDIM) Sampling
@@ -13,7 +13,7 @@ This implements DDIM sampling from the paper
 [Denoising Diffusion Implicit Models](https://arxiv.org/abs/2010.02502)
 """
 
-from typing import Optional, List
+from typing import Optional, List, Union
 
 import numpy as np
 import torch
@@ -21,7 +21,7 @@ import torch
 from labml import monit
 from latent_diffusion import LatentDiffusion
 from sampler import DiffusionSampler
-
+from super_resolution import SuperResolution
 
 class DDIMSampler(DiffusionSampler):
     """
@@ -51,9 +51,9 @@ class DDIMSampler(DiffusionSampler):
 
     model: LatentDiffusion
 
-    def __init__(self, model: LatentDiffusion, n_steps: int, ddim_discretize: str = "uniform", ddim_eta: float = 0.):
+    def __init__(self, model: Union[LatentDiffusion, SuperResolution], n_steps: int, ddim_discretize: str = "uniform", ddim_eta: float = 0.):
         """
-        :param model: is the model to predict noise $\epsilon_\text{cond}(x_t, c)$
+        :param model: is the sr_models to predict noise $\epsilon_\text{cond}(x_t, c)$
         :param n_steps: is the number of DDIM sampling steps, $S$
         :param ddim_discretize: specifies how to extract $\tau$ from $[1,2,\dots,T]$.
             It can be either `uniform` or `quad`.

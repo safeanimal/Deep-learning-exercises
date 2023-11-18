@@ -7,14 +7,14 @@ class FeatureExtractor(nn.Module):
     def __init__(self):
         super(FeatureExtractor, self).__init__()
         vgg19_model = vgg19(pretrained=True)
-        # The VGG19 model is divided into two primary parts: features and classifier. The features attribute
+        # The VGG19 sr_models is divided into two primary parts: features and classifier. The features attribute
         # represents the sequential layers of convolutional and pooling layers, while the classifier attribute
         # represents the fully connected layers that follow the convolutional layers.
         #
         # vgg19_model.features.children() returns an iterator over the immediate children layers (modules) of the
         # features attribute. In the given code, list(vgg19_model.features.children())[:18] is used to extract the
-        # first 18 layers of the VGG19 model, which are then passed to the nn.Sequential() constructor to create a
-        # new sequential model for the feature extractor.
+        # first 18 layers of the VGG19 sr_models, which are then passed to the nn.Sequential() constructor to create a
+        # new sequential sr_models for the feature extractor.
         self.feature_extractor = nn.Sequential(*list(vgg19_model.features.children())[:18])
 
     def forward(self, img):

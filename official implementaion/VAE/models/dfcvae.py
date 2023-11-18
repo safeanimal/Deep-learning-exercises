@@ -143,7 +143,7 @@ class DFCVAE(BaseVAE):
                          input: Tensor,
                          feature_layers: List = None) -> List[Tensor]:
         """
-        Extracts the features from the pretrained model
+        Extracts the features from the pretrained sr_models
         at the layers indicated by feature_layers.
         :param input: (Tensor) [B x C x H x W]
         :param feature_layers: List of string of IDs
@@ -196,7 +196,7 @@ class DFCVAE(BaseVAE):
         Samples from the latent space and return the corresponding
         image space map.
         :param num_samples: (Int) Number of samples
-        :param current_device: (Int) Device to run the model
+        :param current_device: (Int) Device to run the sr_models
         :return: (Tensor)
         """
         z = torch.randn(num_samples,
