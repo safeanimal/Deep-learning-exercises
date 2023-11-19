@@ -1,0 +1,10 @@
+
+Epoch: 1:   0%|                                                          | 0/117685 [00:29<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 162, in <module>
+    metric = peak_signal_to_noise_ratio(gt_images, hr_images)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\metric.py", line 23, in peak_signal_to_noise_ratio
+    mse_value = mean_square_error(y_true, y_pred)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\metric.py", line 12, in mean_square_error
+    return torch.mean((y_true - y_pred) ** 2)
+RuntimeError: The size of tensor a (512) must match the size of tensor b (256) at non-singleton dimension 3

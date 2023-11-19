@@ -4,6 +4,7 @@ from ResidualEncoder import ResidualEncoder
 import torch.nn as nn
 import torch
 
+
 class SuperResolution(nn.Module):
     def __init__(self,
                  latent_scaling_factor: float,
@@ -94,8 +95,6 @@ class SuperResolution(nn.Module):
 
         self.model.load_state_dict(torch.load(unet_checkpoint))
         self.model.requires_grad_(False)
-
-
 
 # When you call .to('cuda:0') on a PyTorch model, it recursively moves all the model's parameters and buffers to the specified device
 # model = SuperResolution(linear_start=0.00085, linear_end=0.0120, n_steps=1000, latent_scaling_factor=0.18215).to('cuda:0')

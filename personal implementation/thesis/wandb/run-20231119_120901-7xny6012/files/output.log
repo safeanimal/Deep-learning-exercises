@@ -1,0 +1,28 @@
+
+Epoch: 1:   0%|                                                          | 0/117685 [00:39<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 159, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 823, in forward
+    x = self.conv_after_body(self.forward_features(x)) + x
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 800, in forward_features
+    x = layer(x, x_size)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 484, in forward
+    return self.patch_embed(self.conv(self.patch_unembed(self.residual_group(x, x_size), x_size))) + x
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 404, in forward
+    x = blk(x, x_size)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 264, in forward
+    attn_windows = self.attn(x_windows, mask=self.calculate_mask(x_size).to(x.device))
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 132, in forward
+    attn = attn + relative_position_bias.unsqueeze(0)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 384.00 MiB (GPU 0; 8.00 GiB total capacity; 14.19 GiB already allocated; 0 bytes free; 14.50 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

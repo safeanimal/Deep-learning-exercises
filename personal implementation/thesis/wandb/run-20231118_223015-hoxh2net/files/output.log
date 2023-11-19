@@ -1,0 +1,17 @@
+
+
+
+
+Epoch: 1:   0%|                       | 64/27594 [03:20<23:59:11,  3.14s/it, loss=0.0784, PSNR=11.1]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 150, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 157, in forward
+    x7 = self.pixel_shuffle2(x6)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\pixelshuffle.py", line 54, in forward
+    return F.pixel_shuffle(input, self.upscale_factor)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB (GPU 0; 8.00 GiB total capacity; 9.46 GiB already allocated; 0 bytes free; 11.70 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

@@ -1,4 +1,4 @@
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, ConcatDataset
 from dataset import ImageDataset
 import utils
 from tqdm import tqdm
@@ -14,8 +14,7 @@ from torch.optim.lr_scheduler import MultiStepLR
 import yaml
 from torchsummary import summary
 from loss import PerceptualLoss, EdgeLoss
-from torch.profiler import profile, record_function, ProfilerActivity
-
+from SwinIR import SwinIR
 
 def init_wandb(project_name: str, args):
     # start a new wandb run to track this script
@@ -35,8 +34,8 @@ if __name__ == '__main__':
     dataset_config = config['dataset']
     hyperparameters_config = config['hyperparameters']
 
-    lr_train_img_folder = dataset_config['lr_train_img_folder']
-    hr_train_img_folder = dataset_config['hr_train_img_folder']
+    lr_train_img_folders = dataset_config['lr_train_img_folders']
+    hr_train_img_folders = dataset_config['hr_train_img_folders']
 
     lr_val_img_folder = dataset_config['lr_val_img_folder']
     hr_val_img_folder = dataset_config['hr_val_img_folder']
@@ -60,7 +59,9 @@ if __name__ == '__main__':
     model_num = hyperparameters_config['model_num']
 
     # 训练集
-    training_dataset = ImageDataset(lr_img_folder=lr_train_img_folder, hr_img_folder=hr_train_img_folder)
+    training_dataset1 = ImageDataset(lr_img_folder=lr_train_img_folders[0], hr_img_folder=hr_train_img_folders[0])
+    training_dataset2 = ImageDataset(lr_img_folder=lr_train_img_folders[1], hr_img_folder=hr_train_img_folders[1])
+    training_dataset = ConcatDataset([training_dataset1, training_dataset2])
     # 训练集大小
     training_samples_size = len(training_dataset)
     # 验证集
@@ -83,11 +84,11 @@ if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     # 加载模型
-    model_parameters = config['saved_model'+str(model_num)]
+    model_parameters = config['model'+str(model_num)]
     image_size = model_parameters['image_size']
     if model_num == 0:
         num_blocks = model_parameters['num_blocks']
-        model = SuperResolutionModel(num_blocks=num_blocks, image_size=image_size).to(device)
+        model = SuperResolutionModel(num_blocks=num_blocks, img_size=image_size).to(device)
     elif model_num == 1:
         in_channels = model_parameters['in_channels']
         out_channels_after_conv1 = model_parameters['out_channels_after_conv1']
@@ -100,8 +101,15 @@ if __name__ == '__main__':
                                      num_blocks=num_blocks, upscale_factor=upscale_factor).to(device)
     elif model_num == 2:
         model = SuperResolutionModel().to(device)
-    # 显示模型信息
-    summary(model, (3, 120, 120))
+    elif model_num == -1: # 对比SwinIR的效果
+        upscale = 4
+        window_size = 8
+        height = (image_size // upscale // window_size + 1) * window_size
+        width = (image_size // upscale // window_size + 1) * window_size
+        model = SwinIR(upscale=4, img_size=(height, width),
+                       window_size=window_size, img_range=1., depths=[6, 6, 6, 6],
+                       embed_dim=60, num_heads=[6, 6, 6, 6], mlp_ratio=2, upsampler='pixelshuffledirect').to(device)
+
 
     # 开启benchmark
     cudnn.benchmark = True
@@ -124,7 +132,7 @@ if __name__ == '__main__':
     scheduler = MultiStepLR(optimizer, lr_decay_schedule, gamma=0.2, last_epoch=-1,
                             verbose=False)
 
-    init_wandb(project_name='train4', args=config)
+    init_wandb(project_name='train5', args=config)
 
     # 下面变量用于记录最好的指标和epoch
     best_epoch = 0
@@ -209,6 +217,6 @@ if __name__ == '__main__':
                 best_metric = metric_logger.avg
                 best_epoch = epoch + 1
                 best_weights = copy.deepcopy(model.state_dict())
-                torch.save(best_weights, os.path.join(save_path, 'best.pth'))
+                torch.save(best_weights, os.path.join(save_path, 'best_dormitory.pth'))
 
     print(f'Complete! \n The best epoch is {best_epoch} \n The best metric is {best_metric}')

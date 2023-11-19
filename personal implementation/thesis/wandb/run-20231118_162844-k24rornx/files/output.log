@@ -1,0 +1,30 @@
+
+Epoch: 1:   0%|                                                           | 0/27594 [00:14<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 150, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 146, in forward
+    x2 = self.blocks(x1)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 117, in forward
+    pbmsa_out = self.pbmsa(x)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 99, in forward
+    return self.restore_original(attn_output, batch_size, channels, height, width)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 65, in restore_original
+    x = self.group_norm(x)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\normalization.py", line 273, in forward
+    return F.group_norm(
+  File "D:\Anaconda\lib\site-packages\torch\nn\functional.py", line 2530, in group_norm
+    return torch.group_norm(input, num_groups, weight, bias, eps, torch.backends.cudnn.enabled)
+RuntimeError: Expected weight to be a vector of size equal to the number of channels in input, but got weight of shape [32] and input of shape [32, 1024, 256]

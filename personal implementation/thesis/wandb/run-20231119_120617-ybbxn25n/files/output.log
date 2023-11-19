@@ -1,0 +1,16 @@
+
+
+Epoch: 1:   0%|                                                          | 0/117685 [01:38<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 159, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\SwinIR.py", line 822, in forward
+    x = self.conv_first(x)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,

@@ -1,0 +1,16 @@
+
+Epoch: 1:   0%|                                                           | 0/27594 [00:13<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 150, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 156, in forward
+    x3 = self.gn1(self.blocks2(x2))
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\normalization.py", line 273, in forward
+    return F.group_norm(
+  File "D:\Anaconda\lib\site-packages\torch\nn\functional.py", line 2530, in group_norm
+    return torch.group_norm(input, num_groups, weight, bias, eps, torch.backends.cudnn.enabled)
+RuntimeError: Expected weight to be a vector of size equal to the number of channels in input, but got weight of shape [256] and input of shape [8, 32, 128, 128]

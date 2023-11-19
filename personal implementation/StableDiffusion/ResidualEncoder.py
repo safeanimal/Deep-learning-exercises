@@ -1,5 +1,3 @@
-import torch
-
 from sd_models.RRDBNet import RRDB
 from sd_models.SwinIR import SwinTransformerBlock, PatchEmbed
 import torch.nn as nn

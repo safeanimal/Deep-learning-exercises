@@ -1,10 +1,11 @@
 import os
 import yaml
+
+import utils
 from metric import peak_signal_to_noise_ratio
 from PIL import Image
 from model0 import SuperResolutionModel
 import torchvision.transforms as tvt
-import torchvision.transforms.functional as tvf
 import torch
 import copy
 from torchvision.utils import save_image
@@ -24,13 +25,14 @@ model_parameters_path = config['model_parameters_path']
 # 选择GPU为device
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-model = SuperResolutionModel()
+model = SuperResolutionModel(num_blocks=4, img_size=128).to(device)
 model.load_state_dict(torch.load(model_parameters_path))
 
 # 开启推理模式
 model.eval()
 
 input_transform = tvt.Compose([
+    tvt.Resize(size=(128, 128)),
     tvt.ToTensor()
 ])
 
@@ -40,8 +42,8 @@ avg_logger = AverageLogger()
 if not os.path.exists(log_path):
     os.mkdir(log_path)
 
-with open('test_log.txt', mode='a', encoding='uft-8') as file:
-    file.writelines('Date:', datetime.datetime.now())
+with open('test_log.txt', mode='a', encoding='utf-8') as file:
+    file.writelines(f'Date: {datetime.datetime.now()}\n')
     # 以此测试每一个图片集
     for test_dir in test_dirs:
         image_names = os.listdir(test_dir)
@@ -51,15 +53,17 @@ with open('test_log.txt', mode='a', encoding='uft-8') as file:
         print(GT_image_paths)
         for i in range(len(LR_image_paths)):
             lr_image = Image.open(LR_image_paths[i]).convert('RGB')
-            lr_image = input_transform(lr_image).to(device)
+            lr_image = input_transform(lr_image).unsqueeze(dim=0).to(device)
 
             gt_image = Image.open(GT_image_paths[i]).convert('RGB')
-            gt_image = input_transform(gt_image).to(device)
+            gt_image = input_transform(gt_image).unsqueeze(dim=0).to(device)
+
 
             hr_image = model(lr_image)
-
-            psnr = peak_signal_to_noise_ratio(hr_image, gt_image)
-            avg_logger.update(psnr)
+            utils.show_images_tensor(1, lr_image.cpu())
+            utils.show_images_tensor(1, hr_image.cpu())
+            # psnr = peak_signal_to_noise_ratio(hr_image, gt_image)
+            # avg_logger.update(psnr)
 
         file.writelines(f'For {test_dir} \n\tPSNR (avg):{avg_logger.avg}\n')
         avg_logger.clear()

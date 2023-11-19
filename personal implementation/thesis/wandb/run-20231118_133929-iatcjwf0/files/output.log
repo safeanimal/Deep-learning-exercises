@@ -1,0 +1,24 @@
+
+Epoch: 1:   0%|                                                           | 0/27594 [00:13<?, ?it/s]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 150, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 143, in forward
+    x2 = self.blocks(x1)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 114, in forward
+    pbmsa_out = self.pbmsa(x)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 96, in forward
+    return self.restore_original(attn_output, batch_size, channels, height, width)
+  File "H:\Deep-learning-exercises\personal implementation\thesis\model0.py", line 71, in restore_original
+    restored = patches.permute(0, 3, 1, 4, 2, 5).reshape(batch_size, self.channels, height, width)
+RuntimeError: shape '[32, 16, 128, 128]' is invalid for input of size 8128512

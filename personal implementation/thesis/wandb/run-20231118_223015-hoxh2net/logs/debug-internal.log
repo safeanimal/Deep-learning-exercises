@@ -1,0 +1,219 @@
+2023-11-18 22:30:15,294 INFO    StreamThr :14968 [internal.py:wandb_internal():86] W&B internal server running at pid: 14968, started at: 2023-11-18 22:30:15.293747
+2023-11-18 22:30:15,295 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status
+2023-11-18 22:30:15,314 INFO    WriterThread:14968 [datastore.py:open_for_write():85] open: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\run-hoxh2net.wandb
+2023-11-18 22:30:15,315 DEBUG   SenderThread:14968 [sender.py:send():380] send: header
+2023-11-18 22:30:15,351 DEBUG   SenderThread:14968 [sender.py:send():380] send: run
+2023-11-18 22:30:16,656 INFO    SenderThread:14968 [dir_watcher.py:__init__():211] watching files in: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files
+2023-11-18 22:30:16,658 INFO    SenderThread:14968 [sender.py:_start_run_threads():1122] run started: hoxh2net with start time 1700317815.311749
+2023-11-18 22:30:16,668 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: check_version
+2023-11-18 22:30:16,668 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: check_version
+2023-11-18 22:30:20,875 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:20,882 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: run_start
+2023-11-18 22:30:20,898 DEBUG   HandlerThread:14968 [system_info.py:__init__():32] System info init
+2023-11-18 22:30:20,898 DEBUG   HandlerThread:14968 [system_info.py:__init__():47] System info init done
+2023-11-18 22:30:20,898 INFO    HandlerThread:14968 [system_monitor.py:start():194] Starting system monitor
+2023-11-18 22:30:20,899 INFO    SystemMonitor:14968 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-18 22:30:20,899 INFO    HandlerThread:14968 [system_monitor.py:probe():214] Collecting system info
+2023-11-18 22:30:20,902 INFO    SystemMonitor:14968 [interfaces.py:start():190] Started cpu monitoring
+2023-11-18 22:30:20,903 INFO    SystemMonitor:14968 [interfaces.py:start():190] Started disk monitoring
+2023-11-18 22:30:20,905 INFO    SystemMonitor:14968 [interfaces.py:start():190] Started gpu monitoring
+2023-11-18 22:30:20,906 INFO    SystemMonitor:14968 [interfaces.py:start():190] Started memory monitoring
+2023-11-18 22:30:20,911 INFO    SystemMonitor:14968 [interfaces.py:start():190] Started network monitoring
+2023-11-18 22:30:20,921 DEBUG   HandlerThread:14968 [system_info.py:probe():196] Probing system
+2023-11-18 22:30:20,923 DEBUG   HandlerThread:14968 [system_info.py:_probe_git():181] Probing git
+2023-11-18 22:30:21,000 DEBUG   HandlerThread:14968 [system_info.py:_probe_git():189] Probing git done
+2023-11-18 22:30:21,000 DEBUG   HandlerThread:14968 [system_info.py:probe():244] Probing system done
+2023-11-18 22:30:21,001 DEBUG   HandlerThread:14968 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.10.9', 'heartbeatAt': '2023-11-18T14:30:20.921604', 'startedAt': '2023-11-18T14:30:15.286747', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'H:\\Deep-learning-exercises\\personal implementation\\thesis\\train.py', 'codePathLocal': 'train.py', 'codePath': 'personal implementation\\thesis\\train.py', 'git': {'remote': 'git@git.zhlh6.cn:safeanimal/Deep-learning-exercises.git', 'commit': 'dbcfbc1da5c1ca6bb5e6edc89558969394356354'}, 'email': '411814789@qq.com', 'root': 'H:/Deep-learning-exercises', 'host': 'DESKTOP-JUDPAR7', 'username': 'MLYL', 'executable': 'D:\\Anaconda\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2500.0, 'min': 0.0, 'max': 2500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 0.0, 'max': 2500.0}], 'disk': {'/': {'total': 367.91503524780273, 'used': 309.4190902709961}}, 'gpu': 'NVIDIA GeForce RTX 3060 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Ti', 'memory_total': 8589934592}], 'memory': {'total': 15.817798614501953}}
+2023-11-18 22:30:21,001 INFO    HandlerThread:14968 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-18 22:30:21,001 INFO    HandlerThread:14968 [system_monitor.py:probe():227] Publishing system info
+2023-11-18 22:30:21,001 DEBUG   HandlerThread:14968 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-18 22:30:21,001 DEBUG   HandlerThread:14968 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-18 22:30:21,001 DEBUG   HandlerThread:14968 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-11-18 22:30:21,703 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_created():271] file/dir created: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\conda-environment.yaml
+2023-11-18 22:30:21,704 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_created():271] file/dir created: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\requirements.txt
+2023-11-18 22:30:27,359 DEBUG   HandlerThread:14968 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-18 22:30:27,362 INFO    HandlerThread:14968 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-18 22:30:27,371 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:27,372 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-18 22:30:27,372 DEBUG   SenderThread:14968 [sender.py:send():380] send: files
+2023-11-18 22:30:27,372 INFO    SenderThread:14968 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-18 22:30:27,380 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:30:27,380 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:30:27,381 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:30:27,763 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\conda-environment.yaml
+2023-11-18 22:30:27,764 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_created():271] file/dir created: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\wandb-metadata.json
+2023-11-18 22:30:28,274 DEBUG   SenderThread:14968 [sender.py:send():380] send: telemetry
+2023-11-18 22:30:28,765 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_created():271] file/dir created: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\output.log
+2023-11-18 22:30:30,230 INFO    wandb-upload_0:14968 [upload_job.py:push():131] Uploaded file C:\Users\MLYL\AppData\Local\Temp\tmp49r1vndiwandb\wrwh2hmb-wandb-metadata.json
+2023-11-18 22:30:30,794 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\output.log
+2023-11-18 22:30:31,296 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:36,345 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:41,389 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:42,390 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:30:42,390 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:30:42,390 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:30:46,644 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:46,955 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\config.yaml
+2023-11-18 22:30:51,974 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:57,015 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:30:57,407 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:30:57,408 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:30:57,414 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:31:02,794 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:07,822 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:12,410 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:31:12,410 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:31:12,425 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:31:13,762 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:18,804 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:20,923 DEBUG   SystemMonitor:14968 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-18 22:31:20,928 DEBUG   SenderThread:14968 [sender.py:send():380] send: stats
+2023-11-18 22:31:23,945 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:27,434 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:31:27,435 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:31:27,436 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:31:29,712 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:34,762 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:39,794 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:42,428 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:31:42,443 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:31:42,444 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:31:45,198 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:50,249 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:50,933 DEBUG   SenderThread:14968 [sender.py:send():380] send: stats
+2023-11-18 22:31:55,976 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:31:57,442 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:31:57,457 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:31:57,458 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:32:01,841 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:06,886 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:11,947 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:12,456 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:32:12,472 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:32:12,473 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:32:17,283 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:20,946 DEBUG   SenderThread:14968 [sender.py:send():380] send: stats
+2023-11-18 22:32:22,969 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:27,461 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:32:27,493 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:32:27,494 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:32:28,764 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:33,792 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:38,840 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:42,472 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:32:42,488 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:32:42,489 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:32:44,441 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:49,494 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:50,953 DEBUG   SenderThread:14968 [sender.py:send():380] send: stats
+2023-11-18 22:32:54,974 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:32:57,475 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:32:57,506 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:32:57,506 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:33:00,859 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:05,913 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:10,946 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:12,487 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:33:12,518 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:33:12,519 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:33:16,826 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:20,955 DEBUG   SenderThread:14968 [sender.py:send():380] send: stats
+2023-11-18 22:33:21,966 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:27,024 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:27,501 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:33:27,533 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:33:27,534 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:33:32,874 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:37,917 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:39,648 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-18 22:33:39,649 DEBUG   SenderThread:14968 [sender.py:send():380] send: history
+2023-11-18 22:33:39,650 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: summary_record
+2023-11-18 22:33:39,653 INFO    SenderThread:14968 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-18 22:33:40,576 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_created():271] file/dir created: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\wandb-summary.json
+2023-11-18 22:33:41,580 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\output.log
+2023-11-18 22:33:43,483 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:43,595 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\output.log
+2023-11-18 22:33:45,368 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 22:33:45,368 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 22:33:45,368 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 22:33:45,370 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-18 22:33:45,698 DEBUG   SenderThread:14968 [sender.py:send():380] send: history
+2023-11-18 22:33:45,699 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: summary_record
+2023-11-18 22:33:45,699 INFO    SenderThread:14968 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-18 22:33:46,628 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\wandb-summary.json
+2023-11-18 22:33:47,638 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\output.log
+2023-11-18 22:33:48,140 DEBUG   SenderThread:14968 [sender.py:send():380] send: exit
+2023-11-18 22:33:48,140 INFO    SenderThread:14968 [sender.py:send_exit():585] handling exit code: 1
+2023-11-18 22:33:48,143 INFO    SenderThread:14968 [sender.py:send_exit():587] handling runtime: 207
+2023-11-18 22:33:48,144 INFO    SenderThread:14968 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-18 22:33:48,144 INFO    SenderThread:14968 [sender.py:send_exit():593] send defer
+2023-11-18 22:33:48,145 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,145 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-18 22:33:48,145 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,145 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-18 22:33:48,145 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 1
+2023-11-18 22:33:48,145 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,146 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-18 22:33:48,146 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,146 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-18 22:33:48,146 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 2
+2023-11-18 22:33:48,146 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,146 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-18 22:33:48,146 INFO    HandlerThread:14968 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-18 22:33:48,146 INFO    HandlerThread:14968 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-18 22:33:48,146 DEBUG   SystemMonitor:14968 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-18 22:33:48,147 INFO    HandlerThread:14968 [interfaces.py:finish():202] Joined disk monitor
+2023-11-18 22:33:48,150 DEBUG   SystemMonitor:14968 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-18 22:33:48,171 INFO    HandlerThread:14968 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-18 22:33:48,171 INFO    HandlerThread:14968 [interfaces.py:finish():202] Joined memory monitor
+2023-11-18 22:33:48,172 INFO    HandlerThread:14968 [interfaces.py:finish():202] Joined network monitor
+2023-11-18 22:33:48,172 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,172 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-18 22:33:48,172 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 3
+2023-11-18 22:33:48,172 DEBUG   SenderThread:14968 [sender.py:send():380] send: stats
+2023-11-18 22:33:48,172 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,173 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-18 22:33:48,173 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,173 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-18 22:33:48,173 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 4
+2023-11-18 22:33:48,173 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,173 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-18 22:33:48,173 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,173 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-18 22:33:48,173 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 5
+2023-11-18 22:33:48,173 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,173 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-18 22:33:48,174 DEBUG   SenderThread:14968 [sender.py:send():380] send: summary
+2023-11-18 22:33:48,174 INFO    SenderThread:14968 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-18 22:33:48,174 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,174 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-18 22:33:48,175 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 6
+2023-11-18 22:33:48,175 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,175 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-18 22:33:48,175 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,175 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-18 22:33:48,175 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 7
+2023-11-18 22:33:48,175 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 22:33:48,175 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:48,176 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-18 22:33:48,176 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:48,176 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-18 22:33:48,652 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\wandb-summary.json
+2023-11-18 22:33:49,114 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 8
+2023-11-18 22:33:49,114 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:49,114 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-18 22:33:49,114 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: defer
+2023-11-18 22:33:49,114 INFO    SenderThread:14968 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-18 22:33:49,114 INFO    SenderThread:14968 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-18 22:33:49,116 INFO    SenderThread:14968 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-18 22:33:49,139 INFO    SenderThread:14968 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-18 22:33:49,141 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-18 22:33:49,147 INFO    SenderThread:14968 [sender.py:transition_state():613] send defer: 9
+2023-11-18 22:33:49,147 DEBUG   SenderThread:14968 [sender.py:send_request():407] send_request: poll_exit
+2023-11-18 22:33:49,147 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 22:33:49,147 DEBUG   SenderThread:14968 [sender.py:send():380] send: artifact
+2023-11-18 22:33:49,147 INFO    HandlerThread:14968 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-18 22:33:49,661 INFO    Thread-16 :14968 [dir_watcher.py:_on_file_modified():288] file/dir modified: H:\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231118_223015-hoxh2net\files\output.log
+2023-11-18 22:33:50,149 DEBUG   HandlerThread:14968 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-18 22:33:50,938 INFO    wandb-upload_0:14968 [upload_job.py:push():86] Skipped uploading C:\Users\MLYL\AppData\Local\wandb\wandb\artifacts\staging\tmpryaxdwe7
+2023-11-18 22:33:51,476 INFO    wandb-upload_1:14968 [upload_job.py:push():89] Uploaded file C:\Users\MLYL\AppData\Local\wandb\wandb\artifacts\staging\tmp65omv947
