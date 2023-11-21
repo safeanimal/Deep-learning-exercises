@@ -1,0 +1,11 @@
+2023-11-21 17:04:01,623 INFO    StreamThr :2000 [internal.py:wandb_internal():86] W&B internal server running at pid: 2000, started at: 2023-11-21 17:04:01.622087
+2023-11-21 17:04:01,624 DEBUG   HandlerThread:2000 [handler.py:handle_request():144] handle_request: status
+2023-11-21 17:04:01,625 INFO    WriterThread:2000 [datastore.py:open_for_write():85] open: E:\AI\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231121_170401-3o7v4uwc\run-3o7v4uwc.wandb
+2023-11-21 17:04:01,628 DEBUG   SenderThread:2000 [sender.py:send():375] send: header
+2023-11-21 17:04:01,679 DEBUG   SenderThread:2000 [sender.py:send():375] send: run
+2023-11-21 17:04:03,154 INFO    SenderThread:2000 [dir_watcher.py:__init__():219] watching files in: E:\AI\Deep-learning-exercises\personal implementation\thesis\wandb\run-20231121_170401-3o7v4uwc\files
+2023-11-21 17:04:03,165 INFO    SenderThread:2000 [sender.py:_start_run_threads():1124] run started: 3o7v4uwc with start time 1700557441.623127
+2023-11-21 17:04:03,165 DEBUG   SenderThread:2000 [sender.py:send_request():402] send_request: summary_record
+2023-11-21 17:04:03,157 DEBUG   HandlerThread:2000 [handler.py:handle_request():144] handle_request: check_version
+2023-11-21 17:04:03,166 INFO    SenderThread:2000 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-21 17:04:03,166 DEBUG   SenderThread:2000 [sender.py:send_request():402] send_request: check_version

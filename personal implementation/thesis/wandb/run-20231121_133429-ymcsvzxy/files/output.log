@@ -1,0 +1,16 @@
+
+Epoch: 1:   0%|                                                          | 0/516792 [00:23<?, ?it/s]
+Traceback (most recent call last):
+  File "E:\AI\Deep-learning-exercises\personal implementation\thesis\train.py", line 212, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "E:\AI\Deep-learning-exercises\personal implementation\thesis\model0.py", line 200, in forward
+    x6 = self.conv3(x5)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [3, 32, 3, 3], expected input[32, 128, 128, 128] to have 32 channels, but got 128 channels instead

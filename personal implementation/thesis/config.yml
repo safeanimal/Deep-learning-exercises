@@ -1,21 +1,21 @@
 dataset:
   hr_train_img_folders:
-    - H:/dataset/DIV2K/DIV2K_train_HR_sub #HR训练集的路径
-    - H:/dataset/Flickr2K/Flickr2K_HR_sub
+    - D:/Materials/dataset/DIV2K/DIV2K_train_HR_sub #HR训练集的路径
+    - D:/Materials/dataset/Flickr2K/Flickr2K_HR_sub
   lr_train_img_folders:
-    - H:/dataset/DIV2K/DIV2K_train_LR_unknown_X4_sub #LR测试集的路径
-    - H:/dataset/Flickr2K/Flickr2K_LR_unknown/X4_sub
-  hr_val_img_folder: H:/dataset/DIV2K/DIV2K_valid_HR_sub #HR验证集的路径
-  lr_val_img_folder: H:/dataset/DIV2K/DIV2K_valid_LR_unknown_X4_sub #LR验证集的路径
+    - D:/Materials/dataset/DIV2K/DIV2K_train_LR_unknown_X4_sub #LR测试集的路径
+    - D:/Materials/dataset/Flickr2K/Flickr2K_LR_unknown/X4_sub
+  hr_val_img_folder: D:/Materials/dataset/DIV2K/DIV2K_valid_HR_sub #HR验证集的路径
+  lr_val_img_folder: D:/Materials/dataset/DIV2K/DIV2K_valid_LR_unknown_X4_sub #LR验证集的路径
   save_path: save #模型的保存路径
 
 hyperparameters:
-  lr: 0.001 #学习率，刚开始设大一点
-  batch_size: 16 #批处理大小，刚开始设大一点，尽量占满显存，若训练太慢，调小一点
+  lr: 0.0001 #学习率，刚开始设大一点
+  batch_size: 32 #批处理大小，刚开始设大一点，尽量占满显存，若训练太慢，调小一点
   num_workers: 6 # 读取数据的线程个数，设成比核心数小一点
-  epoch: 100
-  lr_decay_schedule: [1, 8, 16, 32] #学习率衰减计划
-  loss_name: MSE #可选MSE或L1
+  epoch: 10
+  lr_decay_schedule: [1, 4, 8] #学习率衰减计划
+  loss_name: L1 #可选MSE或L1
   add_perceptual_loss: false #添加感知损失
   add_edge_loss: false # 添加边缘损失
   coefficient_perceptual_loss: 0.0001 #感知损失的权重系数
