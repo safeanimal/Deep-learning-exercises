@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
 class SpatialAttention(nn.Module):
     def __init__(self, kernel_size=3):
         super(SpatialAttention, self).__init__()
@@ -121,12 +120,14 @@ class AttentionBlock(nn.Module):
 
 
 class SuperResolutionModel(nn.Module):
-    def __init__(self, num_blocks, img_size, first_conv_out_channels=16):
+    def __init__(self, num_blocks, img_size, first_conv_out_channels=64):
         super(SuperResolutionModel, self).__init__()
 
         self.feature_extractor = nn.Conv2d(in_channels=3, out_channels=first_conv_out_channels, kernel_size=3,
                                            padding=1)
-        self.blocks = nn.Sequential(*[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size) for _ in range(num_blocks)])
+        self.blocks1 = nn.Sequential(*[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size) for _ in range(num_blocks//2)])
+        self.blocks2 = nn.Sequential(
+            *[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size) for _ in range(num_blocks // 2)])
         self.conv1 = nn.Conv2d(in_channels=first_conv_out_channels, out_channels=256, kernel_size=3,
                                padding=1)
         self.act1 = nn.LeakyReLU()
@@ -138,11 +139,21 @@ class SuperResolutionModel(nn.Module):
                                padding=1)
 
     def forward(self, x):
+        # transform lr_up to 3D data to satisfy the input size of quantizer
+        b, c, h, w = x.shape
+        # x = x.permute(0, 2, 3, 1).contiguous().view(b, -1, c)  # (b, h, w, c)->(b, h*w, c)
+        # # Finite-Scalar Quatization
+        # x, _ = self.quantizer(x)
+        # # transform orig_image_quantized back to orig_image's size
+        # x = x.view(b, h, w, c).permute(0, 3, 1, 2)
+
         x1 = self.feature_extractor(x)
-        x2 = self.blocks(x1)
-        x3 = self.act1(self.conv1(x2))
-        x4 = self.pixel_shuffle1(x3)
-        x5 = self.act2(self.conv2(x4))
-        x6 = self.pixel_shuffle2(x5)
-        hr_image = self.conv3(x6)
+
+        x2 = self.blocks1(x1)
+        x3 = self.blocks2(x2)
+        x4 = self.act1(self.conv1(x3))
+        x5 = self.pixel_shuffle1(x4)
+        x6 = self.act2(self.conv2(x5))
+        x7 = self.pixel_shuffle2(x6)
+        hr_image = self.conv3(x7)
         return hr_image

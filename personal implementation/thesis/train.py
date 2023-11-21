@@ -12,9 +12,8 @@ from metric import peak_signal_to_noise_ratio
 from torch.backends import cudnn
 from torch.optim.lr_scheduler import MultiStepLR
 import yaml
-from torchsummary import summary
 from loss import PerceptualLoss, EdgeLoss
-from torch.profiler import profile, record_function, ProfilerActivity
+from basicsr.data.realesrgan_paired_dataset import RealESRGANPairedDataset
 
 
 def init_wandb(project_name: str, args):
@@ -59,13 +58,44 @@ if __name__ == '__main__':
 
     model_num = hyperparameters_config['model_num']
 
+    train_opt = {
+        'dataroot_gt': hr_train_img_folder,
+        'dataroot_lq': lr_train_img_folder,
+        # 'meta_info': {},    # not be used when 'io_backend' is 'disk'
+        'io_backend': {
+            'type': 'disk',
+            # 'db_paths': '', # not be used when 'io_backend' is 'disk'
+            # 'client_keys': ''   # not be used when 'io_backend' is 'disk'
+        },
+        'filename_tmpl': '{}',
+        'gt_size': 512,
+        'use_hflip': False,
+        'use_rot': False,
+        'scale': 4,
+        'phase': 'train'
+    }
     # 训练集
-    training_dataset = ImageDataset(lr_img_folder=lr_train_img_folder, hr_img_folder=hr_train_img_folder)
+    training_dataset = RealESRGANPairedDataset(train_opt)
     # 训练集大小
     training_samples_size = len(training_dataset)
+
+    val_opt = {
+        'dataroot_gt': hr_val_img_folder,
+        'dataroot_lq': lr_val_img_folder,
+        'io_backend': {
+            'type': 'disk',
+            # 'db_paths': '', # not be used when 'io_backend' is 'disk'
+            # 'client_keys': ''   # not be used when 'io_backend' is 'disk'
+        },
+        'filename_tmpl': '{}',
+        'gt_size': 512,
+        'use_hflip': False,
+        'use_rot': False,
+        'scale': 4,
+        'phase': 'val'
+    }
     # 验证集
-    val_dataset = ImageDataset(lr_img_folder=lr_val_img_folder,
-                               hr_img_folder=hr_val_img_folder)
+    val_dataset = RealESRGANPairedDataset(val_opt)
     # 验证集大小
     val_samples_size = len(val_dataset)
 
@@ -74,7 +104,7 @@ if __name__ == '__main__':
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True)
     # 展示dataloader里的数据（图片）
     for batch in training_dataloader:
-        lr_images, gt_images = batch
+        lr_images, gt_images = batch['lq'], batch['gt']
         utils.show_images_tensor(4, lr_images)
         utils.show_images_tensor(4, gt_images)
         break
@@ -83,11 +113,11 @@ if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     # 加载模型
-    model_parameters = config['saved_model'+str(model_num)]
+    model_parameters = config['model' + str(model_num)]
     image_size = model_parameters['image_size']
     if model_num == 0:
         num_blocks = model_parameters['num_blocks']
-        model = SuperResolutionModel(num_blocks=num_blocks, image_size=image_size).to(device)
+        model = SuperResolutionModel(num_blocks=num_blocks, img_size=image_size).to(device)
     elif model_num == 1:
         in_channels = model_parameters['in_channels']
         out_channels_after_conv1 = model_parameters['out_channels_after_conv1']
@@ -101,7 +131,7 @@ if __name__ == '__main__':
     elif model_num == 2:
         model = SuperResolutionModel().to(device)
     # 显示模型信息
-    summary(model, (3, 120, 120))
+    # summary(model, (3, 128, 128))
 
     # 开启benchmark
     cudnn.benchmark = True
@@ -143,7 +173,7 @@ if __name__ == '__main__':
             # 分批次训练
             for batch in training_dataloader:
                 iteration = iteration + 1
-                lr_images, gt_images = batch
+                lr_images, gt_images = batch['lq'], batch['gt']
                 lr_images = lr_images.to(device)
                 gt_images = gt_images.to(device)
 
@@ -185,7 +215,7 @@ if __name__ == '__main__':
             p_bar.set_description(f'Val: {epoch + 1}')
             # 分批次
             for batch in val_dataloader:
-                lr_images, gt_images = batch
+                lr_images, gt_images = batch['lq'], batch['gt']
                 lr_images = lr_images.to(device)
                 gt_images = gt_images.to(device)
 

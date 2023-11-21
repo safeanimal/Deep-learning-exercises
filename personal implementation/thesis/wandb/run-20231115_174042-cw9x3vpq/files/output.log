@@ -1,0 +1,10 @@
+
+Epoch: 1:   0%|                                                           | 0/27594 [00:12<?, ?it/s]
+Traceback (most recent call last):
+  File "E:\AI\Deep-learning-exercises\personal implementation\thesis\train.py", line 151, in <module>
+    hr_images = model(lr_images)
+  File "D:\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "E:\AI\Deep-learning-exercises\personal implementation\thesis\model0.py", line 148, in forward
+    x = x.view(b, h, w, c).permute(0, 3, 1, 2)
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.

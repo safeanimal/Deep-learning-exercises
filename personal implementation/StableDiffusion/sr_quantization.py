@@ -9,6 +9,7 @@ from clip_embedder import CLIPTextEmbedder
 import torch.nn.functional as F
 from util import save_images, load_img
 
+
 class SRQuantization(nn.Module):
     def __init__(self, ddim_steps: int = 50):
         super().__init__()
@@ -21,7 +22,7 @@ class SRQuantization(nn.Module):
                               n_heads=8,
                               tf_layers=1,
                               d_cond=768)
-        self.levels_before = [8, 6, 5] # this is for 3-dimension image, if 4-diemsion, set to [8, 5, 5, 5]
+        self.levels_before = [8, 6, 5]  # this is for 3-dimension image, if 4-diemsion, set to [8, 5, 5, 5]
 
         self.quantizer_before = FSQ(self.levels_before)
         self.encoder = Encoder(z_channels=4,
@@ -30,7 +31,7 @@ class SRQuantization(nn.Module):
                                channel_multipliers=[1, 2, 4, 4],
                                n_resnet_blocks=2)
 
-        self.levels_after = [8, 5, 5, 5] # this is for 4-dimension image, if 3-diemsion, set to [8, 6, 5]
+        self.levels_after = [8, 5, 5, 5]  # this is for 4-dimension image, if 3-diemsion, set to [8, 6, 5]
         self.quantizer_after = FSQ(self.levels_after)
         self.decoder = Decoder(out_channels=3,
                                z_channels=4,
@@ -65,15 +66,15 @@ class SRQuantization(nn.Module):
 
         # Load image
         orig_image = lr_up.to(self.device)
-        # transform lr_up to 3D data to satisfy the input size of quantizer
-        orig_q = orig_image.permute(0, 2, 3, 1).contiguous().view(b, -1, c) # (b, h, w, c)->(b, h*w, c)
-        # Finite-Scalar Quatization
-        orig_image_quantized, _ = self.quantizer_before(orig_q)
-        # transform orig_image_quantized back to orig_image's size
-        orig_image_quantized = orig_image_quantized.view(b, h, w, c).permute(0, 3, 1, 2)
+        # # transform lr_up to 3D data to satisfy the input size of quantizer
+        # orig_q = orig_image.permute(0, 2, 3, 1).contiguous().view(b, -1, c)  # (b, h, w, c)->(b, h*w, c)
+        # # Finite-Scalar Quatization
+        # orig_image_quantized, _ = self.quantizer_before(orig_q)
+        # # transform orig_image_quantized back to orig_image's size
+        # orig_image_quantized = orig_image_quantized.view(b, h, w, c).permute(0, 3, 1, 2)
 
         # Encode the image in the latent space and make `batch_size` copies of it
-        orig = self.latent_diffusion.autoencoder_encode(orig_image_quantized).repeat(b, 1, 1, 1)
+        orig = self.latent_diffusion.autoencoder_encode(orig_image).repeat(b, 1, 1, 1)
 
         # Get the number of steps to diffuse the original
         assert 0. <= strength <= 1., 'can only work with strength in [0.0, 1.0]'
@@ -95,24 +96,23 @@ class SRQuantization(nn.Module):
                                uncond_scale=uncond_scale,
                                uncond_cond=un_cond)
         # Decode the image from the [autoencoder](../model/autoencoder.html)
-        # transform x to 3D data to satisfy the input size of quantizer
-        bx, cx, hx, wx = x.shape
-        x_q = x.permute(0, 2, 3, 1).contiguous().view(bx, -1, cx)  # (bx, hx, wx, cx)->(bx, hx*wx, cx)
-        # Finite-Scalar Quatization
-        x_quantized, _ = self.quantizer_after(x_q)
-        # transform x_quantized back to x's size
-        x_quantized = x_quantized.view(bx, hx, wx, cx).permute(0, 3, 1, 2)
-        hr = self.latent_diffusion.autoencoder_decode(x_quantized)
+        # # transform x to 3D data to satisfy the input size of quantizer
+        # bx, cx, hx, wx = x.shape
+        # x_q = x.permute(0, 2, 3, 1).contiguous().view(bx, -1, cx)  # (bx, hx, wx, cx)->(bx, hx*wx, cx)
+        # # Finite-Scalar Quatization
+        # x_quantized, _ = self.quantizer_after(x_q)
+        # # transform x_quantized back to x's size
+        # x_quantized = x_quantized.view(bx, hx, wx, cx).permute(0, 3, 1, 2)
+        hr = self.latent_diffusion.autoencoder_decode(x)
         return hr
 
     def load(self, unet_checkpoint_path: str, auto_encoder_checkpoint_path: str):
         self.unet.load_state_dict(torch.load(unet_checkpoint_path))
-        self.autoencoder.load_state_dict(torch.load(auto_encoder_checkpoint_path))
+        # self.autoencoder.load_state_dict(torch.load(auto_encoder_checkpoint_path))
 
         self.unet.requires_grad_(False)
         # self.autoencoder.requires_grad_(False)
         self.clip_text_embedder.requires_grad_(False)
-
 
 # model = SRQuantization().to('cuda:0')
 # model.load(unet_checkpoint_path='E:/AI/checkpoints/stable-diffusion-v-1-4-original/sd-v1-4-unet.ckpt',

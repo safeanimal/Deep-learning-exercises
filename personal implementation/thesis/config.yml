@@ -1,12 +1,12 @@
 dataset:
-  hr_train_img_folder: D:/Materials/dataset/DIV2K 2018/DIV2K_train_HR_sub #HR训练集的路径
-  lr_train_img_folder: D:/Materials/dataset/DIV2K 2018/DIV2K_train_LR_unknown_X4_sub #LR测试集的路径
-  hr_val_img_folder: D:/Materials/dataset/DIV2K 2018/DIV2K_valid_HR_sub #HR验证集的路径
-  lr_val_img_folder: D:/Materials/dataset/DIV2K 2018/DIV2K_valid_LR_unknown_X4_sub #LR验证集的路径
+  hr_train_img_folder: D:\Materials\dataset\DIV2K 2018\DIV2K_train_HR_sub #HR训练集的路径
+  lr_train_img_folder: D:\Materials\dataset\DIV2K 2018\DIV2K_train_LR_unknown_X4_sub #LR测试集的路径
+  hr_val_img_folder: D:\Materials\dataset\DIV2K 2018\DIV2K_valid_HR_sub #HR验证集的路径
+  lr_val_img_folder: D:\Materials\dataset\DIV2K 2018\DIV2K_valid_LR_unknown_X4_sub #LR验证集的路径
   save_path: save #模型的保存路径
 
 hyperparameters:
-  lr: 0.001 #学习率，刚开始设大一点
+  lr: 0.0001 #学习率，刚开始设大一点
   batch_size: 32 #批处理大小，刚开始设大一点，尽量占满显存，若训练太慢，调小一点
   num_workers: 4 # 读取数据的线程个数，设成比核心数小一点
   epoch: 100
@@ -21,11 +21,11 @@ hyperparameters:
 
   
 model0:
-  num_blocks: 4
+  num_blocks: 8
   image_size: 128
 
 model1:
-  image_size: 120
+  image_size: 128
   in_channels: 3
   out_channels_after_conv1: 16
   out_channels_after_conv2: 64
