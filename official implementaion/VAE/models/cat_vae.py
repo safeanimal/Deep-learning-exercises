@@ -183,7 +183,7 @@ class CategoricalVAE(BaseVAE):
         Samples from the latent space and return the corresponding
         image space map.
         :param num_samples: (Int) Number of samples
-        :param current_device: (Int) Device to run the model
+        :param current_device: (Int) Device to run the sr_models
         :return: (Tensor)
         """
         # [S x D x Q]

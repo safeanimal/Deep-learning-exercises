@@ -9,7 +9,7 @@ summary: >
 # Latent Diffusion Models
 
 Latent diffusion models use an auto-encoder to map between image space and
-latent space. The diffusion model works on the latent space, which makes it
+latent space. The diffusion sr_models works on the latent space, which makes it
 a lot easier to train.
 It is based on paper
 [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752).
@@ -33,8 +33,8 @@ from unet import UNetModel
 
 class DiffusionWrapper(nn.Module):
     """
-    *This is an empty wrapper class around the [U-Net](model/unet.html).
-    We keep this to have the same model structure as
+    *This is an empty wrapper class around the [U-Net](sr_models/unet.html).
+    We keep this to have the same sr_models structure as
     [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion)
     so that we do not have to map the checkpoint weights explicitly*.
     """
@@ -49,13 +49,13 @@ class DiffusionWrapper(nn.Module):
 
 class LatentDiffusion(nn.Module):
     """
-    ## Latent diffusion model
+    ## Latent diffusion sr_models
 
     This contains following components:
 
-    * [AutoEncoder](model/autoencoder.html)
-    * [U-Net](model/unet.html) with [attention](model/unet_attention.html)
-    * [CLIP embeddings generator](model/clip_embedder.html)
+    * [AutoEncoder](sr_models/autoencoder.html)
+    * [U-Net](sr_models/unet.html) with [attention](sr_models/unet_attention.html)
+    * [CLIP embeddings generator](sr_models/clip_embedder.html)
     """
     model: DiffusionWrapper
     first_stage_model: Autoencoder
@@ -71,10 +71,10 @@ class LatentDiffusion(nn.Module):
                  linear_end: float,
                  ):
         """
-        :param unet_model: is the [U-Net](model/unet.html) that predicts noise
+        :param unet_model: is the [U-Net](sr_models/unet.html) that predicts noise
          $\epsilon_\text{cond}(x_t, c)$, in latent space
-        :param autoencoder: is the [AutoEncoder](model/autoencoder.html)
-        :param clip_embedder: is the [CLIP embeddings generator](model/clip_embedder.html)
+        :param autoencoder: is the [AutoEncoder](sr_models/autoencoder.html)
+        :param clip_embedder: is the [CLIP embeddings generator](sr_models/clip_embedder.html)
         :param latent_scaling_factor: is the scaling factor for the latent space. The encodings of
          the autoencoder are scaled by this before feeding into the U-Net.
         :param n_steps: is the number of diffusion steps $T$.
@@ -82,13 +82,13 @@ class LatentDiffusion(nn.Module):
         :param linear_end: is the end of the $\beta$ schedule.
         """
         super().__init__()
-        # Wrap the [U-Net](model/unet.html) to keep the same model structure as
+        # Wrap the [U-Net](sr_models/unet.html) to keep the same sr_models structure as
         # [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion).
         self.model = DiffusionWrapper(unet_model)
         # Auto-encoder and scaling factor
         self.first_stage_model = autoencoder
         self.latent_scaling_factor = latent_scaling_factor
-        # [CLIP embeddings generator](model/clip_embedder.html)
+        # [CLIP embeddings generator](sr_models/clip_embedder.html)
         self.cond_stage_model = clip_embedder
 
         # Number of steps $T$
@@ -106,13 +106,13 @@ class LatentDiffusion(nn.Module):
     @property
     def device(self):
         """
-        ### Get model device
+        ### Get sr_models device
         """
         return next(iter(self.model.parameters())).device
 
     def get_text_conditioning(self, prompts: List[str]):
         """
-        ### Get [CLIP embeddings](model/clip_embedder.html) for a list of text prompts
+        ### Get [CLIP embeddings](sr_models/clip_embedder.html) for a list of text prompts
         """
         return self.cond_stage_model(prompts)
 

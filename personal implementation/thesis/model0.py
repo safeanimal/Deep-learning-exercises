@@ -9,13 +9,14 @@ class SpatialAttention(nn.Module):
         padding = 3 if kernel_size == 7 else 1
 
         # Using a convolution layer to produce a 2D spatial attention map
-        self.conv1 = nn.Conv2d(2, 1, kernel_size, padding=padding, bias=False)
+        self.conv1 = nn.Conv2d(3, 1, kernel_size, padding=padding, bias=False)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
         avg_out = torch.mean(x, dim=1, keepdim=True)
+        min_out, _ = torch.min(x, dim=1, keepdim=True)
         max_out, _ = torch.max(x, dim=1, keepdim=True)
-        x = torch.cat([avg_out, max_out], dim=1)
+        x = torch.cat([min_out, avg_out, max_out], dim=1)
         x = self.conv1(x)
         return self.sigmoid(x)
 
@@ -102,10 +103,15 @@ class AttentionBlock(nn.Module):
         self.ca = ChannelAttention(in_planes=CA_in_planes)
         self.pbmsa = PBMSA(patch_size, embed_dim, num_heads, channels=CA_in_planes)
         self.ln = nn.LayerNorm(normalized_shape=[CA_in_planes, img_size, img_size], elementwise_affine=False)
-        self.relu = nn.ReLU(inplace=True)
-        self.conv = nn.Conv2d(in_channels=1+2*CA_in_planes, out_channels=CA_in_planes, kernel_size=3, stride=1, padding=1)
+        self.act = nn.GELU()
+        self.conv = nn.Conv2d(in_channels=1 + 2 * CA_in_planes, out_channels=CA_in_planes, kernel_size=3, stride=1,
+                              padding=1)
+
+        self.gn1 = nn.GroupNorm(8, CA_in_planes)
+        self.gn2 = nn.GroupNorm(1, 1 + 2 * CA_in_planes)
 
     def forward(self, x):
+        x = self.gn1(x)
         sa_out = self.sa(x)
         # print('sa_out', sa_out.shape)
         ca_out = self.ca(x)
@@ -115,28 +121,37 @@ class AttentionBlock(nn.Module):
         concat_out = torch.cat([sa_out, ca_out, pbmsa_out], dim=1)  # (batch_size, 17, ...)
         # print('concat_out', concat_out.shape)
         # mlp_out = self.mlp(concat_out)
-        out = self.ln(self.conv(self.relu(concat_out)))
+        out = self.ln(self.conv(self.act(self.gn2(concat_out))))
         return out
 
 
 class SuperResolutionModel(nn.Module):
-    def __init__(self, num_blocks, img_size, first_conv_out_channels=64):
+    def __init__(self, num_blocks, img_size, first_conv_out_channels=32):
         super(SuperResolutionModel, self).__init__()
 
         self.feature_extractor = nn.Conv2d(in_channels=3, out_channels=first_conv_out_channels, kernel_size=3,
                                            padding=1)
-        self.blocks1 = nn.Sequential(*[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size) for _ in range(num_blocks//2)])
+        self.blocks1 = nn.Sequential(
+            *[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size, patch_size=s)
+              for s in [2, 4]])
         self.blocks2 = nn.Sequential(
-            *[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size) for _ in range(num_blocks // 2)])
-        self.conv1 = nn.Conv2d(in_channels=first_conv_out_channels, out_channels=256, kernel_size=3,
+            *[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size, patch_size=s)
+              for s in [4, 4]])
+        self.blocks3 = nn.Sequential(
+            *[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size, patch_size=s)
+              for s in [4, 4]])
+        self.blocks4 = nn.Sequential(
+            *[AttentionBlock(CA_in_planes=first_conv_out_channels, img_size=img_size, patch_size=s)
+              for s in [4, 4]])
+
+        self.conv1 = nn.Conv2d(in_channels=first_conv_out_channels, out_channels=96, kernel_size=3,
                                padding=1)
-        self.act1 = nn.LeakyReLU()
-        self.pixel_shuffle1 = nn.PixelShuffle(upscale_factor=2)
-        self.conv2 = nn.Conv2d(in_channels=64, out_channels=32, kernel_size=3, stride=1, padding=1)
-        self.pixel_shuffle2 = nn.PixelShuffle(upscale_factor=2)
-        self.act2 = nn.LeakyReLU()
-        self.conv3 = nn.Conv2d(in_channels=8, out_channels=3, kernel_size=3,
-                               padding=1)
+
+        self.pixel_shuffle1 = nn.PixelShuffle(upscale_factor=4)
+
+        self.conv2 = nn.Conv2d(in_channels=6, out_channels=64, kernel_size=3, stride=1, padding=1)
+
+        self.conv3 = nn.Conv2d(in_channels=64, out_channels=3, kernel_size=3, stride=1, padding=1)
 
     def forward(self, x):
         # transform lr_up to 3D data to satisfy the input size of quantizer
@@ -148,12 +163,14 @@ class SuperResolutionModel(nn.Module):
         # x = x.view(b, h, w, c).permute(0, 3, 1, 2)
 
         x1 = self.feature_extractor(x)
-
         x2 = self.blocks1(x1)
         x3 = self.blocks2(x2)
-        x4 = self.act1(self.conv1(x3))
-        x5 = self.pixel_shuffle1(x4)
-        x6 = self.act2(self.conv2(x5))
-        x7 = self.pixel_shuffle2(x6)
-        hr_image = self.conv3(x7)
-        return hr_image
+        x4 = self.blocks3(x1+x3)
+        x5 = self.blocks4(x2+x4)
+
+        x6 = F.gelu(self.conv1(x3+x5))
+        x7 = self.pixel_shuffle1(x6)
+        x8 = F.gelu(self.conv2(x7))
+        x9 = self.conv3(x8)
+
+        return x9

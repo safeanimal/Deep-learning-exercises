@@ -8,9 +8,9 @@ summary: >
 
 # Autoencoder for [Stable Diffusion](../index.html)
 
-This implements the auto-encoder model used to map between image space and latent space.
+This implements the auto-encoder sr_models used to map between image space and latent space.
 
-We have kept to the model definition and naming unchanged from
+We have kept to the sr_models definition and naming unchanged from
 [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion)
 so that we can load the checkpoints directly.
 """

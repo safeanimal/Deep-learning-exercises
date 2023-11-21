@@ -13,7 +13,7 @@ class TestFAE(unittest.TestCase):
     def test_summary(self):
         print(summary(self.model, (3, 64, 64), device='cpu'))
         #
-        # print(sum(p.numel() for p in self.model.parameters() if p.requires_grad))
+        # print(sum(p.numel() for p in self.sr_models.parameters() if p.requires_grad))
 
         # print(summary(self.model2, (3, 64, 64), device='cpu'))
 

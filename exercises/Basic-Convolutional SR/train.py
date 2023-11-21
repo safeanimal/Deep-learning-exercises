@@ -32,14 +32,14 @@ if __name__ == '__main__':
     # select device
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-    # initiate the model, loss_function, and optimizer
+    # initiate the sr_models, loss_function, and optimizer
     model = SRG().to(device)
     criterion = torch.nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
     # set the benchmark
     cudnn.benchmark = True
-    # deep copy the model's parameters
+    # deep copy the sr_models's parameters
     best_weight = copy.deepcopy(model.state_dict())
 
     num_epoch = 50
@@ -79,7 +79,7 @@ if __name__ == '__main__':
                 # update the progress bar
                 t.update(len(inputs))
 
-        # Save the model's weights for the current epoch.
+        # Save the sr_models's weights for the current epoch.
         torch.save(model.state_dict(), os.path.join(outputs_dir, 'epoch_{}.pth'.format(epoch)))
 
         # eval

@@ -1,10 +1,10 @@
 test_dirs: #需要测试的图片路径
-  - D:\Materials\dataset\test\BSD100_SR\image_SRF_4
-  - D:\Materials\dataset\test\Set5_SR\Set5\image_SRF_4
-  - D:\Materials\dataset\test\Set14_SR\Set14\image_SRF_4
-  - D:\Materials\dataset\test\Urban100_SR\image_SRF_4
+  - H:\dataset\BSD100_SR\image_SRF_4
+  - H:\Materials\dataset\Set5_SR\Set5\image_SRF_4
+  - H:\Materials\dataset\Set14_SR\Set14\image_SRF_4
+  - H:\Materials\dataset\Urban100_SR\image_SRF_4
 
-model_parameters_path: save\4blocks.pth
+model_parameters_path: save\best_dormitory.pth
 
 test_type: LR # 需要测试的类型
 

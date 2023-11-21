@@ -64,7 +64,7 @@ def sampling(xt, T, model, start, end, step):
 
 model = GenerativeModel(image_size=image_size).to(device)
 
-model.load_state_dict(torch.load('saved_model/model.pth'))
+model.load_state_dict(torch.load('saved_model/sr_models.pth'))
 model.eval()  # 开启评估模式！
 with torch.no_grad():
     noise = torch.randn(*image_shape).to(device)

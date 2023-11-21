@@ -40,7 +40,7 @@ parser.add_argument("--hr_height", type=int, default=256, help="high res. image 
 parser.add_argument("--hr_width", type=int, default=256, help="high res. image width")
 parser.add_argument("--channels", type=int, default=3, help="number of image channels")
 parser.add_argument("--sample_interval", type=int, default=100, help="interval between saving image samples")
-parser.add_argument("--checkpoint_interval", type=int, default=-1, help="interval between model checkpoints")
+parser.add_argument("--checkpoint_interval", type=int, default=-1, help="interval between sr_models checkpoints")
 opt = parser.parse_args()
 print(opt)
 
@@ -92,7 +92,7 @@ dataloader = DataLoader(
 for epoch in range(opt.epoch, opt.n_epochs):
     for i, imgs in enumerate(dataloader):
 
-        # Configure model input
+        # Configure sr_models input
         imgs_lr = Variable(imgs["lr"].type(Tensor))
         imgs_hr = Variable(imgs["hr"].type(Tensor))
 
@@ -158,6 +158,6 @@ for epoch in range(opt.epoch, opt.n_epochs):
             save_image(img_grid, "images/%d.png" % batches_done, normalize=False)
 
     if opt.checkpoint_interval != -1 and epoch % opt.checkpoint_interval == 0:
-        # Save model checkpoints
+        # Save sr_models checkpoints
         torch.save(generator.state_dict(), "saved_models/generator_%d.pth" % epoch)
         torch.save(discriminator.state_dict(), "saved_models/discriminator_%d.pth" % epoch)

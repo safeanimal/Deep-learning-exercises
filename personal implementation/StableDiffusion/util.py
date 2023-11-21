@@ -37,7 +37,7 @@ def set_seed(seed: int):
 
 def load_model(path: Path = None) -> LatentDiffusion:
     """
-    ### Load [`LatentDiffusion` model](latent_diffusion.html)
+    ### Load [`LatentDiffusion` sr_models](latent_diffusion.html)
     """
 
     # Initialize the autoencoder
@@ -75,8 +75,8 @@ def load_model(path: Path = None) -> LatentDiffusion:
                                tf_layers=1,
                                d_cond=768)
 
-    # Initialize the Latent Diffusion model
-    with monit.section('Initialize Latent Diffusion model'):
+    # Initialize the Latent Diffusion sr_models
+    with monit.section('Initialize Latent Diffusion sr_models'):
         model = LatentDiffusion(linear_start=0.00085,
                                 linear_end=0.0120,
                                 n_steps=1000,
@@ -87,10 +87,10 @@ def load_model(path: Path = None) -> LatentDiffusion:
                                 unet_model=unet_model)
 
     # Load the checkpoint
-    with monit.section(f"Loading model from {path}"):
+    with monit.section(f"Loading sr_models from {path}"):
         checkpoint = torch.load(path, map_location="cpu")
 
-    # Set model state
+    # Set sr_models state
     with monit.section('Load state'):
         missing_keys, extra_keys = model.load_state_dict(checkpoint["state_dict"], strict=False)
 

@@ -25,7 +25,7 @@ def set_parameters():
     parser.add_argument('num_workers', nargs='?', type=int, default=6)
     parser.add_argument('lr', nargs='?', type=float, default=0.001)
     parser.add_argument('epoch', nargs='?', type=int, default=20)
-    parser.add_argument('save_path', nargs='?', type=str, default='save', help='the path in which the model is saved')
+    parser.add_argument('save_path', nargs='?', type=str, default='save', help='the path in which the sr_models is saved')
     parser.parse_args()
     return parser
 

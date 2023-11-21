@@ -10,7 +10,7 @@ summary: >
 This implements the U-Net that
  gives $\epsilon_\text{cond}(x_t, c)$
 
-We have kept to the model definition and naming unchanged from
+We have kept to the sr_models definition and naming unchanged from
 [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion)
 so that we can load the checkpoints directly.
 
@@ -35,7 +35,7 @@ from unet_attention import SpatialTransformer
 
 class UNetModel(nn.Module):
     """
-    ## U-Net model
+    ## U-Net sr_models
     """
 
     def __init__(
@@ -52,7 +52,7 @@ class UNetModel(nn.Module):
         """
         :param in_channels: is the number of channels in the input feature map
         :param out_channels: is the number of channels in the output feature map
-        :param channels: is the base channel count for the model
+        :param channels: is the base channel count for the sr_models
         :param n_res_blocks: number of residual blocks at each level
         :param attention_levels: are the levels at which attention should be performed
         :param channel_multipliers: are the multiplicative factors for number of channels for each level

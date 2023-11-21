@@ -45,8 +45,8 @@ class TemporalEmbedding(torch.nn.Module):
 # channels = 3
 # x = torch.randn(16, channels, 28, 28)
 # t = torch.Tensor([2])
-# model = TemporalEmbedding(dim_emb=1024, dim_out=channels)
-# out = model(x, t)
+# sr_models = TemporalEmbedding(dim_emb=1024, dim_out=channels)
+# out = sr_models(x, t)
 # print(out.shape)
 
 class LabelEmbedding(torch.nn.Module):

@@ -189,20 +189,20 @@ if __name__ == '__main__':
                 # 记录损失
                 p_bar.set_postfix({'loss': loss.item()})
 
-                # nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                # nn.utils.clip_grad_norm_(sr_models.parameters(), 1.0)
                 # 打印梯度
-                # for name, param in model.named_parameters():
+                # for name, param in sr_models.named_parameters():
                 # if param.grad is not None:
                 # print(name, torch.max(param.grad))
 
-                # nn.utils.clip_grad_norm_(model.parameters(), 2, norm_type=2) # 梯度裁剪
+                # nn.utils.clip_grad_norm_(sr_models.parameters(), 2, norm_type=2) # 梯度裁剪
 
                 optimizer.step()
                 optimizer.zero_grad()
 
                 # 更新进度条&显示损失及指标
                 p_bar.update(x0.shape[0])
-        torch.save(model.state_dict(), save_path+"/model.pth")
+        torch.save(model.state_dict(), save_path+"/sr_models.pth")
 
     model.eval() # 开启评估模式！
     with torch.no_grad():

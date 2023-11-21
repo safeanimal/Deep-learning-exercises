@@ -4,7 +4,7 @@ title: Sampling algorithms for stable diffusion
 summary: >
  Annotated PyTorch implementation/tutorial of
  sampling algorithms
- for stable diffusion model.
+ for stable diffusion sr_models.
 ---
 
 # Sampling algorithms for [stable diffusion](../index.html)
@@ -15,12 +15,12 @@ We have implemented the following [sampling algorithms](sampler/index.html):
 * [Denoising Diffusion Implicit Models (DDIM) Sampling](ddim.html)
 """
 
-from typing import Optional, List
+from typing import Optional, List, Union
 
 import torch
 
 from latent_diffusion import LatentDiffusion
-
+from super_resolution import SuperResolution
 
 class DiffusionSampler:
     """
@@ -28,14 +28,14 @@ class DiffusionSampler:
     """
     model: LatentDiffusion
 
-    def __init__(self, model: LatentDiffusion):
+    def __init__(self, model: Union[LatentDiffusion, SuperResolution]):
         """
-        :param model: is the model to predict noise $\epsilon_\text{cond}(x_t, c)$
+        :param model: is the sr_models to predict noise $\epsilon_\text{cond}(x_t, c)$
         """
         super().__init__()
-        # Set the model $\epsilon_\text{cond}(x_t, c)$
+        # Set the sr_models $\epsilon_\text{cond}(x_t, c)$
         self.model = model
-        # Get number of steps the model was trained with $T$
+        # Get number of steps the sr_models was trained with $T$
         self.n_steps = model.n_steps
 
     def get_eps(self, x: torch.Tensor, t: torch.Tensor, c: torch.Tensor, *,
