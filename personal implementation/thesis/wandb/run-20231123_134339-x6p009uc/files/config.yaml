@@ -1,0 +1,90 @@
+wandb_version: 1
+
+dataset:
+  desc: null
+  value:
+    hr_train_img_folders:
+    - E:\datasets\DIV2K\DIV2K_train_HR_sub.lmdb
+    - E:\datasets\Flickr2K\Flickr2K_HR_sub.lmdb
+    lr_train_img_folders:
+    - E:\datasets\DIV2K\DIV2K_train_LR_unknown_X4_sub.lmdb
+    - E:\datasets\Flickr2K\Flickr2K_LR_unknown_X4_sub.lmdb
+    hr_val_img_folder: E:\datasets\DIV2K\DIV2K_valid_HR_sub
+    lr_val_img_folder: E:\datasets\DIV2K\DIV2K_valid_LR_unknown_X4_sub
+    save_path: save
+hyperparameters:
+  desc: null
+  value:
+    lr: 1.0e-05
+    batch_size: 64
+    num_workers: 6
+    epoch: 10
+    lr_decay_schedule:
+    - 4
+    - 8
+    loss_name: L1
+    add_perceptual_loss: false
+    add_edge_loss: true
+    coefficient_perceptual_loss: 0.0001
+    coefficient_edge_loss: 0.1
+    optimizer_name: Adam
+    model_num: 0
+model0:
+  desc: null
+  value:
+    num_blocks: 8
+    image_size: 64
+model1:
+  desc: null
+  value:
+    image_size: 128
+    in_channels: 3
+    out_channels_after_conv1: 16
+    out_channels_after_conv2: 64
+    patch_sizes:
+    - 4
+    - 8
+    - 12
+    num_blocks:
+    - 4
+    - 2
+    - 1
+    upscale_factor: 4
+model2:
+  desc: null
+  value:
+    image_size: 128
+model-1:
+  desc: null
+  value:
+    image_size: 256
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.17
+    cli_version: 0.14.2
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1700718219.316416
+    t:
+      1:
+      - 1
+      - 41
+      - 49
+      - 55
+      - 63
+      2:
+      - 1
+      - 41
+      - 49
+      - 55
+      - 63
+      3:
+      - 16
+      - 23
+      4: 3.9.17
+      5: 0.14.2
+      8:
+      - 3
+      - 5

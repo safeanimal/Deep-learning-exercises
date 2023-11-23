@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch: 1:   2%|▌                       | 2960/120768 [01:07<44:47, 43.83it/s, loss=0.156, PSNR=14.9]
+Traceback (most recent call last):
+  File "H:\Deep-learning-exercises\personal implementation\thesis\train.py", line 225, in <module>
+    for batch in training_dataloader:
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "D:\Anaconda\lib\site-packages\torch\_utils.py", line 644, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 5.
+Original Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\_utils\worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "D:\Anaconda\lib\site-packages\torch\utils\data\dataset.py", line 243, in __getitem__
+    return self.datasets[dataset_idx][sample_idx]
+  File "D:\Anaconda\lib\site-packages\basicsr\data\realesrgan_paired_dataset.py", line 78, in __getitem__
+    self.file_client = FileClient(self.io_backend_opt.pop('type'), **self.io_backend_opt)
+  File "D:\Anaconda\lib\site-packages\basicsr\utils\file_client.py", line 153, in __init__
+    raise ValueError(f'Backend {backend} is not supported. Currently supported ones'

@@ -23,7 +23,8 @@ class ImageDataset(Dataset):
         #     raise ValueError('the samples_size should be in the range of [1, img_number]')
 
         self.transform = transforms.Compose([
-            transforms.ToTensor()
+            transforms.ToTensor(),
+            # transforms.Normalize(mean=0.4370, std=0.03)
         ])
 
     def __getitem__(self, item):

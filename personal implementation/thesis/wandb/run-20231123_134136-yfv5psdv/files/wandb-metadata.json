@@ -1,0 +1,50 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.17",
+    "heartbeatAt": "2023-11-23T05:41:40.781230",
+    "startedAt": "2023-11-23T05:41:36.784155",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "E:\\AI\\Deep-learning-exercises\\personal implementation\\thesis\\train.py",
+    "codePath": "personal implementation\\thesis\\train.py",
+    "git": {
+        "remote": "git@github.com:safeanimal/Deep-learning-exercises.git",
+        "commit": "eaf3ec7118e1d5f033365a7abe63f9ecda9684f7"
+    },
+    "email": "411814789@qq.com",
+    "root": "E:/AI/Deep-learning-exercises",
+    "host": "WIN-9RI3PV9PDQ6",
+    "username": "Administrator",
+    "executable": "D:\\Anaconda\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2500.0,
+        "min": 0.0,
+        "max": 2500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2500.0,
+            "min": 0.0,
+            "max": 2500.0
+        }
+    ],
+    "disk": {
+        "total": 1907.7265586853027,
+        "used": 200.97024154663086
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Ti",
+            "memory_total": 17175674880
+        }
+    ],
+    "memory": {
+        "total": 15.861251831054688
+    }
+}

@@ -34,7 +34,7 @@ model.eval()
 
 input_transform = tvt.Compose([
     # tvt.Resize(size=(64, 64)),
-    tvt.ToTensor()
+    tvt.ToTensor(),
 ])
 
 # 创建记录器
@@ -50,8 +50,8 @@ with open('test_log.txt', mode='a', encoding='utf-8') as file:
     LR_image_paths = [os.path.join(test_lr_dir, image_name) for image_name in lr_image_names]
     GT_image_paths = [os.path.join(test_gt_dir, image_name) for image_name in gt_image_names]
 
-    for i in range(10):
-        idx = random.randint(a=0, b=2000)
+    for i in range(5):
+        idx = random.randint(a=0, b=10)
         lr_image = Image.open(LR_image_paths[idx]).convert('RGB')
         lr_image = input_transform(lr_image).unsqueeze(dim=0).to(device)
 
