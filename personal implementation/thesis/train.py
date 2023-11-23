@@ -15,6 +15,9 @@ import yaml
 from loss import PerceptualLoss, EdgeLoss
 from basicsr.data.realesrgan_paired_dataset import RealESRGANPairedDataset
 from SwinIR import SwinIR
+from torchinfo import summary
+from torch.cuda.amp import GradScaler, autocast # mix-precision training
+
 
 def init_wandb(project_name: str, args):
     # start a new wandb run to track this script
@@ -63,7 +66,7 @@ if __name__ == '__main__':
         'dataroot_lq': lr_train_img_folders[0],
         # 'meta_info': {},    # not be used when 'io_backend' is 'disk'
         'io_backend': {
-            'type': 'disk',
+            'type': 'lmdb',
             # 'db_paths': '', # not be used when 'io_backend' is 'disk'
             # 'client_keys': ''   # not be used when 'io_backend' is 'disk'
         },
@@ -79,7 +82,7 @@ if __name__ == '__main__':
         'dataroot_lq': lr_train_img_folders[1],
         # 'meta_info': {},    # not be used when 'io_backend' is 'disk'
         'io_backend': {
-            'type': 'disk',
+            'type': 'lmdb',
             # 'db_paths': '', # not be used when 'io_backend' is 'disk'
             # 'client_keys': ''   # not be used when 'io_backend' is 'disk'
         },
@@ -92,42 +95,55 @@ if __name__ == '__main__':
     }
     # 训练集
     # training_dataset = RealESRGANPairedDataset(train_opt)
-    training_dataset1 = ImageDataset(lr_img_folder=lr_train_img_folders[0], hr_img_folder=hr_train_img_folders[0])
-    training_dataset2 = ImageDataset(lr_img_folder=lr_train_img_folders[1], hr_img_folder=hr_train_img_folders[1])
-    # training_dataset1 = RealESRGANPairedDataset(train_opt1)
-    # training_dataset2 = RealESRGANPairedDataset(train_opt2)
+    # training_dataset1 = ImageDataset(lr_img_folder=lr_train_img_folders[0], hr_img_folder=hr_train_img_folders[0])
+    # training_dataset2 = ImageDataset(lr_img_folder=lr_train_img_folders[1], hr_img_folder=hr_train_img_folders[1])
+    training_dataset1 = RealESRGANPairedDataset(train_opt1)
+    training_dataset2 = RealESRGANPairedDataset(train_opt2)
     training_dataset = ConcatDataset([training_dataset1, training_dataset2])
     # 训练集大小
     training_samples_size = len(training_dataset)
 
-    # val_opt = {
-    #     'dataroot_gt': hr_val_img_folder,
-    #     'dataroot_lq': lr_val_img_folder,
-    #     'io_backend': {
-    #         'type': 'disk',
-    #         # 'db_paths': '', # not be used when 'io_backend' is 'disk'
-    #         # 'client_keys': ''   # not be used when 'io_backend' is 'disk'
-    #     },
-    #     'filename_tmpl': '{}',
-    #     'gt_size': 512,
-    #     'use_hflip': False,
-    #     'use_rot': False,
-    #     'scale': 4,
-    #     'phase': 'val'
-    # }
+    val_opt = {
+        'dataroot_gt': hr_val_img_folder,
+        'dataroot_lq': lr_val_img_folder,
+        'io_backend': {
+            'type': 'disk',
+            # 'db_paths': '', # not be used when 'io_backend' is 'disk'
+            # 'client_keys': ''   # not be used when 'io_backend' is 'disk'
+        },
+        'filename_tmpl': '{}',
+        'gt_size': 256,
+        'use_hflip': False,
+        'use_rot': False,
+        'scale': 4,
+        'phase': 'val'
+    }
     # 验证集
-    # val_dataset = RealESRGANPairedDataset(val_opt)
-    val_dataset = ImageDataset(lr_img_folder=lr_val_img_folder, hr_img_folder=hr_val_img_folder)
+    val_dataset = RealESRGANPairedDataset(val_opt)
+    # val_dataset = ImageDataset(lr_img_folder=lr_val_img_folder, hr_img_folder=hr_val_img_folder)
     # 验证集大小
     val_samples_size = len(val_dataset)
 
     # 生成dataloader
-    training_dataloader = DataLoader(training_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True)
-    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True)
+    training_dataloader = DataLoader(training_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True, pin_memory=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, num_workers=num_workers, shuffle=True, pin_memory=True)
+
+    # sum = torch.zeros(size=(128, 3, 64, 64)).to('cuda:0')
+    # with tqdm(total=training_samples_size, ncols=100) as p_bar:
+    #     for batch in training_dataloader:
+    #         lr, hr = batch
+    #         lr = lr.to('cuda:0')
+    #         sum += lr
+    #         p_bar.update(128)
+    # sum = sum.view(-1, 64*64)
+    # mean = torch.mean(sum, dim=1)
+    # std = torch.std(sum, dim=1)
+    # print(mean, std)
+
     # 展示dataloader里的数据（图片）
     for batch in training_dataloader:
-        # lr_images, gt_images = batch['lq'], batch['gt']
-        lr_images, gt_images = batch
+        lr_images, gt_images = batch['lq'], batch['gt']
+        # lr_images, gt_images = batch
         utils.show_images_tensor(4, lr_images)
         utils.show_images_tensor(4, gt_images)
         break
@@ -136,7 +152,7 @@ if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     # 加载模型
-    model_parameters = config['model'+str(model_num)]
+    model_parameters = config['model' + str(model_num)]
     image_size = model_parameters['image_size']
     if model_num == 0:
         num_blocks = model_parameters['num_blocks']
@@ -153,7 +169,7 @@ if __name__ == '__main__':
                                      num_blocks=num_blocks, upscale_factor=upscale_factor).to(device)
     elif model_num == 2:
         model = SuperResolutionModel().to(device)
-    elif model_num == -1: # 对比SwinIR的效果
+    elif model_num == -1:  # 对比SwinIR的效果
         upscale = 4
         window_size = 8
         height = (image_size // upscale // window_size + 1) * window_size
@@ -162,7 +178,7 @@ if __name__ == '__main__':
                        window_size=window_size, img_range=1., depths=[6, 6, 6, 6],
                        embed_dim=60, num_heads=[6, 6, 6, 6], mlp_ratio=2, upsampler='pixelshuffledirect').to(device)
 
-
+    summary(model, input_size=(batch_size, 3, 64, 64))
     # 开启benchmark
     cudnn.benchmark = True
 
@@ -184,7 +200,7 @@ if __name__ == '__main__':
     scheduler = MultiStepLR(optimizer, lr_decay_schedule, gamma=0.2, last_epoch=-1,
                             verbose=False)
 
-    checkpoint = torch.load(os.path.join(save_path, 'checkpoint-16k.pth'))
+    checkpoint = torch.load(os.path.join(save_path, 'checkpoint-18k.pth'))
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     init_wandb(project_name='train6', args=config)
@@ -192,8 +208,10 @@ if __name__ == '__main__':
     # 下面变量用于记录最好的指标和epoch
     best_epoch = 0
     best_metric = 0
-    iteration = 16000
+    iteration = 18000
 
+    # mix-precision training needed
+    scaler = GradScaler()
     # 开始训练
     for epoch in range(epoch):
         # 开启训练模式
@@ -206,11 +224,13 @@ if __name__ == '__main__':
             # 分批次训练
             for batch in training_dataloader:
                 iteration = iteration + 1
-                # lr_images, gt_images = batch['lq'], batch['gt']
-                lr_images, gt_images = batch
+                lr_images, gt_images = batch['lq'], batch['gt']
+                # lr_images, gt_images = batch
                 lr_images = lr_images.to(device)
                 gt_images = gt_images.to(device)
 
+                # enable mix-precision training
+                # with autocast():
                 # 前向传播，得到模型输出
                 hr_images = model(lr_images)
 
@@ -224,11 +244,12 @@ if __name__ == '__main__':
                 if add_edge_loss:
                     loss += coefficient_edge_loss * loss_function_edge(hr_images, gt_images)
                 # 反向传播，计算并累积梯度
+                # scaler.scale(loss).backward()
                 loss.backward()
-
                 # 更新模型参数
+                # scaler.step(optimizer)
+                # scaler.update()
                 optimizer.step()
-
                 # 清空模型梯度
                 optimizer.zero_grad()
 
@@ -236,9 +257,9 @@ if __name__ == '__main__':
                 p_bar.update(batch_size)
                 p_bar.set_postfix({'loss': loss.item(), 'PSNR': metric.item()})
                 wandb.log({"loss": loss.item(), "PSNR": metric.item()})
-                if iteration%1000 == 0:
+                if iteration % 5000 == 0:
                     torch.save({'model_state_dict': model.state_dict(), 'optimizer_state_dict': optimizer.state_dict()},
-                               os.path.join(save_path, f'checkpoint-{iteration//1000}k.pth'))
+                               os.path.join(save_path, f'checkpoint-{iteration // 5000}k.pth'))
 
         scheduler.step()
 
@@ -252,8 +273,8 @@ if __name__ == '__main__':
             p_bar.set_description(f'Val: {epoch + 1}')
             # 分批次
             for batch in val_dataloader:
-                # lr_images, gt_images = batch['lq'], batch['gt']
-                lr_images, gt_images = batch
+                lr_images, gt_images = batch['lq'], batch['gt']
+                # lr_images, gt_images = batch
                 lr_images = lr_images.to(device)
                 gt_images = gt_images.to(device)
 

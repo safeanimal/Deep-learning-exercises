@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.10.9",
+    "heartbeatAt": "2023-11-22T15:04:46.582265",
+    "startedAt": "2023-11-22T15:04:40.107837",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "H:\\Deep-learning-exercises\\personal implementation\\thesis\\train.py",
+    "codePathLocal": "train.py",
+    "codePath": "personal implementation\\thesis\\train.py",
+    "git": {
+        "remote": "git@git.zhlh6.cn:safeanimal/Deep-learning-exercises.git",
+        "commit": "61e96ae52f2c92e851ed74d46465235d675984aa"
+    },
+    "email": "411814789@qq.com",
+    "root": "H:/Deep-learning-exercises",
+    "host": "DESKTOP-JUDPAR7",
+    "username": "MLYL",
+    "executable": "D:\\Anaconda\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2500.0,
+        "min": 0.0,
+        "max": 2500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2500.0,
+            "min": 0.0,
+            "max": 2500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 367.91503524780273,
+            "used": 342.6329460144043
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3060 Ti",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.817798614501953
+    }
+}

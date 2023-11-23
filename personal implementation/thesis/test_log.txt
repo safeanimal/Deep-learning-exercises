@@ -8,3 +8,186 @@ For D:\Materials\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub
 	PSNR (avg):26.665067672729492
 
 
+Date: 2023-11-21 23:12:59.985672
+Date: 2023-11-21 23:30:09.693862
+Date: 2023-11-21 23:37:55.024450
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):29.948192596435547
+
+
+Date: 2023-11-21 23:39:56.249766
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):29.195714950561523
+
+
+Date: 2023-11-21 23:45:41.599189
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):31.062673568725586
+
+
+Date: 2023-11-21 23:46:21.251185
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):30.672351837158203
+
+
+Date: 2023-11-21 23:46:36.085367
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):32.721893310546875
+
+
+Date: 2023-11-21 23:46:47.525879
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):29.008499145507812
+
+
+Date: 2023-11-21 23:49:35.940619
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):30.40524673461914
+
+
+Date: 2023-11-21 23:50:09.451676
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):33.438053131103516
+
+
+Date: 2023-11-21 23:50:38.307458
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):32.0079231262207
+
+
+Date: 2023-11-21 23:51:26.095359
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):26.17689323425293
+
+
+Date: 2023-11-22 00:00:16.724127
+For H:\dataset\Set5_SR\Set5\LR_x4_sub 
+	PSNR (avg):16.461833953857422
+
+
+Date: 2023-11-22 00:01:13.126431
+Date: 2023-11-22 00:03:26.521997
+Date: 2023-11-22 00:03:37.481330
+Date: 2023-11-22 00:04:22.617618
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):15.060580253601074
+
+
+Date: 2023-11-22 00:04:41.768250
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):15.104300498962402
+
+
+Date: 2023-11-22 00:05:01.777827
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):14.67650318145752
+
+
+Date: 2023-11-22 00:05:19.580499
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):14.037152290344238
+
+
+Date: 2023-11-22 00:05:46.923252
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):14.039482116699219
+
+
+Date: 2023-11-22 00:12:41.639965
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):36.1768684387207
+
+
+Date: 2023-11-22 00:14:22.495047
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):27.618759155273438
+
+
+Date: 2023-11-22 00:23:48.197346
+For H:\dataset\Urban100_SR\LR_x4_sub 
+	PSNR (avg):13.306632995605469
+
+
+Date: 2023-11-22 14:47:45.935469
+For H:\dataset\Set5_SR\Set5\LR_x4_sub 
+	PSNR (avg):-15.125068664550781
+
+
+Date: 2023-11-22 14:48:18.603176
+For H:\dataset\Urban100_SR\LR_x4_sub 
+	PSNR (avg):-16.8170166015625
+
+
+Date: 2023-11-22 14:48:35.583287
+For H:\dataset\Urban100_SR\LR_x4_sub 
+	PSNR (avg):12.391448020935059
+
+
+Date: 2023-11-22 14:49:19.621694
+Date: 2023-11-22 14:49:55.973244
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):36.475730895996094
+
+
+Date: 2023-11-22 14:50:18.880533
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):33.09673309326172
+
+
+Date: 2023-11-22 14:50:43.186078
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):-15.228103637695312
+
+
+Date: 2023-11-22 23:57:00.731648
+Date: 2023-11-23 00:00:15.064799
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):26.3355655670166
+
+
+Date: 2023-11-23 00:00:53.179244
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):27.180862426757812
+
+
+Date: 2023-11-23 00:02:10.344430
+Date: 2023-11-23 00:02:21.312761
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):14.98975658416748
+
+
+Date: 2023-11-23 00:03:08.100440
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):15.770065307617188
+
+
+Date: 2023-11-23 00:04:02.155902
+For H:\dataset\Set5_SR\Set5\LR_x4_sub 
+	PSNR (avg):17.607406616210938
+
+
+Date: 2023-11-23 00:05:14.972227
+For H:\dataset\Urban100_SR\LR_x4_sub 
+	PSNR (avg):13.371954917907715
+
+
+Date: 2023-11-23 00:06:11.713184
+For H:\dataset\Urban100_SR\LR_x4_sub 
+	PSNR (avg):14.695039749145508
+
+
+Date: 2023-11-23 00:07:11.493875
+For H:\dataset\Set5_SR\Set5\LR_x4_sub 
+	PSNR (avg):17.90114402770996
+
+
+Date: 2023-11-23 00:07:43.035367
+For H:\dataset\Set14_SR\Set14\LR_x4_sub 
+	PSNR (avg):15.842013359069824
+
+
+Date: 2023-11-23 00:08:24.992543
+For H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):23.49480438232422
+
+

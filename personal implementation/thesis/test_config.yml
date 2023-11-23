@@ -1,7 +1,12 @@
-test_lr_dir: D:\Materials\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub
-test_gt_dir: D:\Materials\dataset\DIV2K\DIV2K_valid_HR_sub
-
-model_parameters_path: save\checkpoint-16k.pth
+test_lr_dir: H:\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub
+test_gt_dir: H:\dataset\DIV2K\DIV2K_valid_HR_sub
+#test_lr_dir: H:\dataset\Set14_SR\Set14\LR_x4_sub
+#test_gt_dir: H:\dataset\Set14_SR\Set14\HR_sub
+#test_lr_dir: H:\dataset\Set5_SR\Set5\LR_x4_sub
+#test_gt_dir: H:\dataset\Set5_SR\Set5\HR_sub
+#test_lr_dir: H:\dataset\Urban100_SR\LR_x4_sub
+#test_gt_dir: H:\dataset\Urban100_SR\HR_sub
+model_parameters_path: save\checkpoint-10k.pth
 
 
 log_path: log # 测试结果输出路径
