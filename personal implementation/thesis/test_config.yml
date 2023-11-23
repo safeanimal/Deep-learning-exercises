@@ -1,7 +1,7 @@
 test_lr_dir: D:\Materials\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub
 test_gt_dir: D:\Materials\dataset\DIV2K\DIV2K_valid_HR_sub
 
-model_parameters_path: save\checkpoint-16k.pth
+model_parameters_path: save\checkpoint-177k.pth
 
 
 log_path: log # 测试结果输出路径

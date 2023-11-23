@@ -8,3 +8,8 @@ For D:\Materials\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub
 	PSNR (avg):26.665067672729492
 
 
+Date: 2023-11-23 12:15:41.252211
+For D:\Materials\dataset\DIV2K\DIV2K_valid_LR_unknown_X4_sub 
+	PSNR (avg):29.34382438659668
+
+
